@@ -25,6 +25,21 @@ except ImportError:
     print("Install with: pip install pyyaml", file=sys.stderr)
     sys.exit(1)
 
+try:
+    from jsonschema import Draft202012Validator, FormatChecker
+except ImportError:
+    print("ERROR: jsonschema is required for schema validation.", file=sys.stderr)
+    print("Install with: pip install jsonschema", file=sys.stderr)
+    sys.exit(1)
+
+SCHEMA_MAP = {
+    "references.yaml": "schemas/references.schema.json",
+    "sources.lock.yaml": "schemas/sources-lock.schema.json",
+    "indexes/topic-map.yaml": "schemas/topic-map.schema.json",
+    "indexes/package-map.yaml": "schemas/package-map.schema.json",
+    "indexes/workflow-stage-map.yaml": "schemas/workflow-stage-map.schema.json",
+}
+
 
 def find_repo_root():
     """Find the repository root by looking for references.yaml."""
@@ -145,6 +160,27 @@ def check_git_not_ignored(repo_root, errors):
             )
 
 
+def check_schema_conformance(repo_root, errors):
+    """Validate YAML files against their corresponding JSON schemas."""
+    format_checker = FormatChecker()
+    for yaml_rel, schema_rel in SCHEMA_MAP.items():
+        yaml_path = repo_root / yaml_rel
+        schema_path = repo_root / schema_rel
+        if not yaml_path.exists() or not schema_path.exists():
+            continue
+        try:
+            data = load_yaml(yaml_path)
+            schema = load_json(schema_path)
+            validator = Draft202012Validator(schema, format_checker=format_checker)
+            for error in sorted(validator.iter_errors(data), key=lambda e: list(e.absolute_path)):
+                path = ".".join(str(p) for p in error.absolute_path) or "(root)"
+                errors.append(
+                    f"Schema validation failed for {yaml_rel} at {path}: {error.message}"
+                )
+        except Exception as e:
+            errors.append(f"Error validating {yaml_rel} against {schema_rel}: {e}")
+
+
 def validate(repo_root=None):
     """Run all validation checks. Returns list of errors (empty = pass)."""
     if repo_root is None:
@@ -170,6 +206,12 @@ def validate(repo_root=None):
             load_json(jf)
         except Exception as e:
             errors.append(f"Failed to parse {jf.name}: {e}")
+
+    if errors:
+        return errors
+
+    # Check YAML files conform to their JSON schemas
+    check_schema_conformance(repo_root, errors)
 
     if errors:
         return errors

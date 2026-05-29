@@ -231,4 +231,324 @@ entries:
     acquisition_mode: not_acquired
     local_path: null
     notes: "Planned placeholder only."
+  - id: sctransform
+    title: "SCTransform"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: seurat-integration
+    title: "Seurat integration"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: seurat-reference-mapping
+    title: "Seurat reference mapping"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: azimuth
+    title: "Azimuth"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: batchelor
+    title: "batchelor"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: harmony
+    title: "Harmony"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: celldex
+    title: "celldex"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: enrichplot
+    title: "enrichplot"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: fgsea
+    title: "fgsea"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: msigdbr
+    title: "msigdbr"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: limma
+    title: "limma"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: edger
+    title: "edgeR"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: deseq2
+    title: "DESeq2"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: pseudobulk-de-guidance
+    title: "Pseudobulk differential expression guidance"
+    status: planned
+    source_type: guide
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: spatialexperiment
+    title: "SpatialExperiment"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: spatialfeatureexperiment
+    title: "SpatialFeatureExperiment"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: seurat-spatial
+    title: "Seurat spatial documentation"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: visium
+    title: "Visium documentation"
+    status: planned
+    source_type: platform_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: xenium
+    title: "Xenium documentation"
+    status: planned
+    source_type: platform_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: cosmx
+    title: "CosMx documentation"
+    status: planned
+    source_type: platform_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: stutility
+    title: "STutility"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: banksy
+    title: "BANKSY"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: nnsvg
+    title: "nnSVG"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: squidpy
+    title: "squidpy"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: giotto
+    title: "Giotto"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: bayesspace
+    title: "BayesSpace"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: spark-x
+    title: "SPARK-X"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: nichenet
+    title: "NicheNet"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: slingshot
+    title: "slingshot"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: tradeseq
+    title: "tradeSeq"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: soupx
+    title: "SoupX"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: git-submodule-documentation
+    title: "Git submodule documentation"
+    status: planned
+    source_type: platform_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
 
