@@ -15,3 +15,15 @@ Tests that the validation script passes against the current repository state.
 Run: `python3 -m unittest tests/test_repo_hygiene.py`
 
 Tests that the repository hygiene scanner passes against the current repository state.
+
+## test_link_catalog.py
+
+Run: `python3 -m unittest tests/test_link_catalog.py`
+
+Tests that `build_link_catalog.py` produces a catalog with exactly 16 reviewed link-only entries and no planned entries.
+
+## test_export_project_reference.py
+
+Run: `python3 -m unittest tests/test_export_project_reference.py`
+
+Tests that `export_project_reference.py` produces the expected export structure and excludes `sources/upstream/` and `acquisition/`.

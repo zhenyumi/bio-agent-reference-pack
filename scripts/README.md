@@ -35,3 +35,15 @@ Scans tracked files for:
 Add `--all` to also scan untracked non-ignored files:
 
     python3 scripts/scan_repo_hygiene.py --all
+
+## build_link_catalog.py
+
+Run: `python3 scripts/build_link_catalog.py`
+
+Reads `references.yaml`, selects entries with `status: reviewed` and `acquisition_mode: link_only` and non-null `upstream`, and writes `exports/link-catalog.yaml`. Fails if any selected entry has `local_path` or `version` set.
+
+## export_project_reference.py
+
+Run: `python3 scripts/export_project_reference.py`
+
+Exports a downstream-ready project reference bundle to `exports/project-reference/`. Includes `AGENTS.reference.md`, `references.link-only.yaml`, `policies/`, and `indexes/`. Does not include `sources/upstream/` or `acquisition/`.
