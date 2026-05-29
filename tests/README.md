@@ -1,6 +1,6 @@
 # Tests
 
-Future tests should verify repository mechanics, including schemas, policy file presence, prompt templates, forbidden file types, and privacy hygiene.
+Tests verify repository mechanics, including schemas, policy file presence, forbidden file types, and privacy hygiene.
 
 Tests must not encode scientific best-practice summaries.
 
@@ -14,28 +14,16 @@ Tests that the validation script passes against the current repository state.
 
 Run: `python3 -m unittest tests/test_repo_hygiene.py`
 
-Tests that the repository hygiene scanner passes against the current repository state.
+Tests that the repository hygiene scanner passes against the current repository state. Includes regression tests ensuring secrets in comment lines, absolute paths, and clean files are handled correctly by the scanner.
 
-## test_link_catalog.py
+## test_export_pipeline.py
 
-Run: `python3 -m unittest tests/test_link_catalog.py`
+Run: `python3 -m unittest tests/test_export_pipeline.py`
 
-Tests that `build_link_catalog.py` produces a catalog with exactly 16 reviewed link-only entries and no planned entries.
-
-## test_export_project_reference.py
-
-Run: `python3 -m unittest tests/test_export_project_reference.py`
-
-Tests that `export_project_reference.py` produces the expected export structure and excludes `sources/upstream/` and `acquisition/`.
-
-## test_release_manifest.py
-
-Run: `python3 -m unittest tests/test_release_manifest.py`
-
-Tests that `build_release_manifest.py` produces a valid MANIFEST.yaml with correct fields, hashes, sizes, and no absolute paths.
-
-## test_verify_export_bundle.py
-
-Run: `python3 -m unittest tests/test_verify_export_bundle.py`
-
-Tests that `verify_export_bundle.py` passes on a valid bundle and correctly fails on missing manifest, tampered hashes, and forbidden directories.
+End-to-end integration test that runs the full export pipeline (build_link_catalog, export_project_reference, build_release_manifest, verify_export_bundle) and asserts:
+- verifier passes on the generated bundle
+- key output files exist
+- exported references contain only allowed fields (no leaked local_path, version, or acquisition metadata)
+- forbidden directories (sources/, acquisition/) are absent
+- manifest declares includes_upstream_source_files: false
+- verifier catches tampered hashes, extra files, and forbidden directories
