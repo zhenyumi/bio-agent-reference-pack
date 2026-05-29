@@ -1,0 +1,43 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bio-agent-reference-pack/references.schema.json",
+  "title": "references.yaml schema",
+  "type": "object",
+  "required": ["schema_version", "entries"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "description": { "type": "string" },
+    "entries": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "title",
+          "status",
+          "source_type",
+          "upstream",
+          "license",
+          "version",
+          "acquisition_mode",
+          "local_path"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "title": { "type": "string" },
+          "status": { "enum": ["planned", "candidate", "reviewed", "acquired", "deprecated"] },
+          "source_type": { "type": "string" },
+          "upstream": { "type": ["string", "null"] },
+          "license": { "type": ["string", "null"] },
+          "version": { "type": ["string", "null"] },
+          "acquisition_mode": { "enum": ["not_acquired", "link_only", "vendored", "generated_lock"] },
+          "local_path": { "type": ["string", "null"] },
+          "notes": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+

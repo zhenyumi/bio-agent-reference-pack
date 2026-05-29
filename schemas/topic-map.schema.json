@@ -1,0 +1,29 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bio-agent-reference-pack/topic-map.schema.json",
+  "title": "topic-map.yaml schema",
+  "type": "object",
+  "required": ["schema_version", "topics"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "description": { "type": "string" },
+    "topics": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "planned_source_ids"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9_]*$" },
+          "planned_source_ids": {
+            "type": "array",
+            "items": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+            "uniqueItems": true
+          }
+        }
+      }
+    }
+  }
+}
+

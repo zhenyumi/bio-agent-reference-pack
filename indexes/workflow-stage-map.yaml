@@ -1,0 +1,33 @@
+schema_version: "0.1"
+description: "Planned workflow-stage routing only. This file must not summarize analysis guidance."
+workflow_stages:
+  - id: project_reproducibility
+    planned_source_ids:
+      - renv
+      - github-actions
+  - id: data_container_selection
+    planned_source_ids:
+      - singlecellexperiment
+      - seurat
+  - id: quality_control
+    planned_source_ids:
+      - single-cell-best-practices
+      - osca
+      - scuttle
+      - scater
+  - id: doublet_and_contamination_checks
+    planned_source_ids:
+      - scdblfinder
+      - decontx-celda
+  - id: analysis_workflow
+    planned_source_ids:
+      - osca
+      - osca-advanced
+      - seurat
+      - bioconductor-package-vignettes
+  - id: reporting_and_review
+    planned_source_ids:
+      - codex-agents-guidance
+      - opencode-documentation
+      - gptomics-bioskills
+

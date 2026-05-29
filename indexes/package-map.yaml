@@ -1,0 +1,46 @@
+schema_version: "0.1"
+description: "Planned package-to-source routing only. This file must not summarize package behavior."
+packages:
+  - package: Seurat
+    planned_source_ids:
+      - seurat
+  - package: scDblFinder
+    planned_source_ids:
+      - scdblfinder
+  - package: celda
+    planned_source_ids:
+      - decontx-celda
+  - package: scuttle
+    planned_source_ids:
+      - scuttle
+  - package: scran
+    planned_source_ids:
+      - scran
+  - package: scater
+    planned_source_ids:
+      - scater
+  - package: SingleCellExperiment
+    planned_source_ids:
+      - singlecellexperiment
+  - package: clusterProfiler
+    planned_source_ids:
+      - clusterprofiler
+  - package: MAST
+    planned_source_ids:
+      - mast
+  - package: SingleR
+    planned_source_ids:
+      - singler
+  - package: LIANA
+    planned_source_ids:
+      - liana
+  - package: CellChat
+    planned_source_ids:
+      - cellchat
+  - package: monocle3
+    planned_source_ids:
+      - monocle3
+  - package: renv
+    planned_source_ids:
+      - renv
+

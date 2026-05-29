@@ -1,0 +1,11 @@
+schema_version: "0.1"
+description: "Future source acquisition lock file. No sources have been acquired yet."
+sources: []
+future_lock_fields:
+  - source_id
+  - version_or_commit
+  - checked_date
+  - license
+  - local_path
+  - acquisition_mode
+

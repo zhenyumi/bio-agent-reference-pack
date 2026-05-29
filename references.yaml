@@ -1,0 +1,234 @@
+schema_version: "0.1"
+description: "Planned source registry placeholders. No source has been acquired by this file."
+entries:
+  - id: single-cell-best-practices
+    title: "single-cell best practices"
+    status: planned
+    source_type: guide
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: osca
+    title: "OSCA"
+    status: planned
+    source_type: guide
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: osca-advanced
+    title: "OSCA Advanced"
+    status: planned
+    source_type: guide
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: osta
+    title: "OSTA"
+    status: planned
+    source_type: guide
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: seurat
+    title: "Seurat"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: bioconductor-package-vignettes
+    title: "Bioconductor package vignettes"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: scdblfinder
+    title: "scDblFinder"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: decontx-celda
+    title: "DecontX/celda"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: scuttle
+    title: "scuttle"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: scran
+    title: "scran"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: scater
+    title: "scater"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: singlecellexperiment
+    title: "SingleCellExperiment"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: clusterprofiler
+    title: "clusterProfiler"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: mast
+    title: "MAST"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: singler
+    title: "SingleR"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: liana
+    title: "LIANA"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: cellchat
+    title: "CellChat"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: monocle3
+    title: "monocle3"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: renv
+    title: "renv"
+    status: planned
+    source_type: package_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: github-actions
+    title: "GitHub Actions"
+    status: planned
+    source_type: platform_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: codex-agents-guidance
+    title: "Codex AGENTS.md guidance"
+    status: planned
+    source_type: agent_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: opencode-documentation
+    title: "OpenCode documentation"
+    status: planned
+    source_type: agent_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+  - id: gptomics-bioskills
+    title: "GPTomics/bioSkills"
+    status: planned
+    source_type: agent_documentation
+    upstream: null
+    license: null
+    version: null
+    acquisition_mode: not_acquired
+    local_path: null
+    notes: "Planned placeholder only."
+

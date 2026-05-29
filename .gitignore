@@ -1,0 +1,114 @@
+# Local environments
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+env/
+ENV/
+.python-version
+.Rprofile
+.Renviron
+.Rhistory
+.RData
+.Ruserdata
+renv/library/
+renv/staging/
+renv/python/
+
+# Secrets and credentials
+*.pem
+*.key
+*.p12
+*.pfx
+*.crt
+*.cer
+*.kdbx
+credentials.*
+secrets.*
+*token*
+*secret*
+
+# Local-only agent overrides
+.codex/local/
+.opencode/local/
+*.local.md
+*.private.md
+
+# Caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.cache/
+.npm/
+node_modules/
+.ipynb_checkpoints/
+.quarto/
+.Rproj.user/
+
+# Logs
+*.log
+logs/
+
+# Local IDE and OS state
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# Build, export, and generated artifacts
+build/
+dist/
+site/
+public/
+out/
+exports/
+coverage/
+htmlcov/
+*.egg-info/
+
+# Large downloaded archives and raw documents
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+*.tar.bz2
+*.tar.xz
+*.7z
+*.rar
+*.gz
+*.bz2
+*.xz
+*.pdf
+
+# Local-only overrides
+local/
+tmp/
+temp/
+
+# These project controls are intentionally tracked.
+!PLAN.md
+!AGENTS.md
+!references.yaml
+!sources.lock.yaml
+!indexes/
+!policies/
+!schemas/
+!scripts/
+!tests/
+!.codex/
+!.codex/prompts/
+!.codex/prompts/*.md
+!.opencode/
+!.opencode/prompts/
+!.opencode/prompts/*.md
+!.opencode/agents/
+!.opencode/agents/*.md
+!.opencode/skills/
+!.opencode/skills/*.md
+

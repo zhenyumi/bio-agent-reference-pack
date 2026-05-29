@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bio-agent-reference-pack/sources-lock.schema.json",
+  "title": "sources.lock.yaml schema",
+  "type": "object",
+  "required": ["schema_version", "sources"],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "type": "string" },
+    "description": { "type": "string" },
+    "future_lock_fields": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "sources": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "source_id",
+          "version_or_commit",
+          "checked_date",
+          "license",
+          "local_path",
+          "acquisition_mode"
+        ],
+        "additionalProperties": false,
+        "properties": {
+          "source_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+          "version_or_commit": { "type": "string" },
+          "checked_date": { "type": "string", "format": "date" },
+          "license": { "type": "string" },
+          "local_path": { "type": "string" },
+          "acquisition_mode": { "enum": ["link_only", "vendored", "generated_lock"] }
+        }
+      }
+    }
+  }
+}
+

@@ -1,0 +1,73 @@
+schema_version: "0.1"
+description: "Planned topic-to-source routing only. This file must not summarize methods."
+topics:
+  - id: scrnaseq_qc
+    planned_source_ids:
+      - single-cell-best-practices
+      - osca
+      - bioconductor-package-vignettes
+      - scuttle
+      - scater
+      - scran
+  - id: snrnaseq_qc
+    planned_source_ids:
+      - single-cell-best-practices
+      - osca
+      - scuttle
+      - scater
+      - scran
+  - id: seurat_workflow
+    planned_source_ids:
+      - seurat
+      - single-cell-best-practices
+  - id: spatial_transcriptomics
+    planned_source_ids:
+      - osta
+      - seurat
+  - id: doublet_detection
+    planned_source_ids:
+      - scdblfinder
+      - single-cell-best-practices
+      - osca
+  - id: ambient_rna
+    planned_source_ids:
+      - decontx-celda
+      - single-cell-best-practices
+      - osca
+  - id: normalization_integration
+    planned_source_ids:
+      - osca
+      - osca-advanced
+      - seurat
+      - scran
+      - scuttle
+  - id: cell_annotation
+    planned_source_ids:
+      - singler
+      - single-cell-best-practices
+      - osca
+      - seurat
+  - id: differential_expression
+    planned_source_ids:
+      - mast
+      - osca
+      - seurat
+      - bioconductor-package-vignettes
+  - id: enrichment_analysis
+    planned_source_ids:
+      - clusterprofiler
+      - bioconductor-package-vignettes
+  - id: cell_cell_communication
+    planned_source_ids:
+      - liana
+      - cellchat
+  - id: trajectory_analysis
+    planned_source_ids:
+      - monocle3
+      - osca
+      - osca-advanced
+  - id: reproducibility_renv
+    planned_source_ids:
+      - renv
+      - github-actions
+
