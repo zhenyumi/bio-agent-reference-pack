@@ -3,124 +3,124 @@ description: "Planned source registry placeholders. No source has been acquired 
 entries:
   - id: single-cell-best-practices
     title: "single-cell best practices"
-    status: planned
+    status: reviewed
     source_type: guide
-    upstream: null
-    license: null
+    upstream: "https://www.sc-best-practices.org/"
+    license: unknown_pending_review
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "repo LICENSE observed, but rendered book license applicability remains unresolved; link-only; no source acquired"
   - id: osca
     title: "OSCA"
-    status: planned
+    status: reviewed
     source_type: guide
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/books/release/OSCA/"
+    license: CC BY 4.0
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered book and source repo have separate evidence locations"
   - id: osca-advanced
     title: "OSCA Advanced"
-    status: planned
+    status: reviewed
     source_type: guide
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/books/release/OSCA.advanced/"
+    license: CC BY 4.0
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered book and source repo have separate evidence locations"
   - id: osta
     title: "OSTA"
-    status: planned
+    status: reviewed
     source_type: guide
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/books/release/OSTA/"
+    license: unknown_pending_review
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "license not observed on rendered book page; partial evidence confidence; link-only; no source acquired"
   - id: seurat
     title: "Seurat"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://satijalab.org/seurat/"
+    license: "MIT + file LICENSE"
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: bioconductor-package-vignettes
     title: "Bioconductor package vignettes"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/help/package-vignettes/"
+    license: unknown_pending_review
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "umbrella scope; redistribution restricted per terms-of-use; partial evidence confidence; link-only; no source acquired"
   - id: scdblfinder
     title: "scDblFinder"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/scDblFinder.html"
+    license: "GPL-3 + file LICENSE"
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: decontx-celda
     title: "DecontX/celda"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/celda.html"
+    license: "MIT + file LICENSE"
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: scuttle
     title: "scuttle"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/scuttle.html"
+    license: GPL-3
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: scran
     title: "scran"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/scran.html"
+    license: GPL-3
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: scater
     title: "scater"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/scater.html"
+    license: GPL-3
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; source repo URL points to bioconductor.org only"
   - id: singlecellexperiment
     title: "SingleCellExperiment"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html"
+    license: GPL-3
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: clusterprofiler
     title: "clusterProfiler"
     status: planned
@@ -183,24 +183,24 @@ entries:
     notes: "Planned placeholder only."
   - id: renv
     title: "renv"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://rstudio.github.io/renv/"
+    license: "MIT + file LICENSE"
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
   - id: github-actions
     title: "GitHub Actions"
-    status: planned
+    status: reviewed
     source_type: platform_documentation
-    upstream: null
-    license: null
+    upstream: "https://docs.github.com/en/actions"
+    license: unknown_pending_review
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "no license terms found on documentation page; partial evidence confidence; link-only; no source acquired"
   - id: codex-agents-guidance
     title: "Codex AGENTS.md guidance"
     status: planned
@@ -233,14 +233,14 @@ entries:
     notes: "Planned placeholder only."
   - id: sctransform
     title: "SCTransform"
-    status: planned
+    status: reviewed
     source_type: package_documentation
-    upstream: null
-    license: null
+    upstream: "https://CRAN.R-project.org/package=sctransform"
+    license: "GPL-3 | file LICENSE"
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; not a Bioconductor package; CRAN is primary distribution"
   - id: seurat-integration
     title: "Seurat integration"
     status: planned
@@ -543,12 +543,12 @@ entries:
     notes: "Planned placeholder only."
   - id: git-submodule-documentation
     title: "Git submodule documentation"
-    status: planned
+    status: reviewed
     source_type: platform_documentation
-    upstream: null
-    license: null
+    upstream: "https://git-scm.com/docs/gitsubmodules"
+    license: GPL
     version: null
-    acquisition_mode: not_acquired
+    acquisition_mode: link_only
     local_path: null
-    notes: "Planned placeholder only."
+    notes: "link-only; no source acquired; reference manual page; GPL per git-scm.com/site license breakdown"
 
