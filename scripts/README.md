@@ -47,3 +47,15 @@ Reads `references.yaml`, selects entries with `status: reviewed` and `acquisitio
 Run: `python3 scripts/export_project_reference.py`
 
 Exports a downstream-ready project reference bundle to `exports/project-reference/`. Includes `AGENTS.reference.md`, `references.link-only.yaml`, `policies/`, and `indexes/`. Does not include `sources/upstream/` or `acquisition/`.
+
+## build_release_manifest.py
+
+Run: `python3 scripts/build_release_manifest.py`
+
+Builds a release manifest at `exports/project-reference/MANIFEST.yaml` with SHA-256 hashes and sizes for all files in the export bundle. Excludes `MANIFEST.yaml` itself from the file list. Requires the export bundle to already exist.
+
+## verify_export_bundle.py
+
+Run: `python3 scripts/verify_export_bundle.py`
+
+Verifies the export bundle integrity: checks required files exist, forbidden directories are absent, reference entries have only allowed fields, and manifest hashes/sizes match current files. Accepts optional CLI argument for custom export directory path.

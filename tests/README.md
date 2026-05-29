@@ -27,3 +27,15 @@ Tests that `build_link_catalog.py` produces a catalog with exactly 16 reviewed l
 Run: `python3 -m unittest tests/test_export_project_reference.py`
 
 Tests that `export_project_reference.py` produces the expected export structure and excludes `sources/upstream/` and `acquisition/`.
+
+## test_release_manifest.py
+
+Run: `python3 -m unittest tests/test_release_manifest.py`
+
+Tests that `build_release_manifest.py` produces a valid MANIFEST.yaml with correct fields, hashes, sizes, and no absolute paths.
+
+## test_verify_export_bundle.py
+
+Run: `python3 -m unittest tests/test_verify_export_bundle.py`
+
+Tests that `verify_export_bundle.py` passes on a valid bundle and correctly fails on missing manifest, tampered hashes, and forbidden directories.
