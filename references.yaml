@@ -13,24 +13,24 @@ entries:
     notes: "repo LICENSE observed, but rendered book license applicability remains unresolved; link-only; no source acquired"
   - id: osca
     title: "OSCA"
-    status: reviewed
+    status: acquired
     source_type: guide
     upstream: "https://bioconductor.org/books/release/OSCA/"
     license: CC BY 4.0
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered book and source repo have separate evidence locations"
+    version: "fe7b362a3215622e06e987aa021d7eec2d0a1fba"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/osca
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: osca-advanced
     title: "OSCA Advanced"
-    status: reviewed
+    status: acquired
     source_type: guide
     upstream: "https://bioconductor.org/books/release/OSCA.advanced/"
     license: CC BY 4.0
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered book and source repo have separate evidence locations"
+    version: "06225560116192a4679c557c05887593050cc705"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/osca-advanced
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: osta
     title: "OSTA"
     status: reviewed
@@ -43,14 +43,14 @@ entries:
     notes: "license not observed on rendered book page; partial evidence confidence; link-only; no source acquired"
   - id: seurat
     title: "Seurat"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://satijalab.org/seurat/"
     license: "MIT + file LICENSE"
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "d464e640cf30da8a45b690b61cdb9462b946b5a9"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/seurat
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: bioconductor-package-vignettes
     title: "Bioconductor package vignettes"
     status: reviewed
@@ -63,44 +63,44 @@ entries:
     notes: "umbrella scope; redistribution restricted per terms-of-use; partial evidence confidence; link-only; no source acquired"
   - id: scdblfinder
     title: "scDblFinder"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://bioconductor.org/packages/release/bioc/html/scDblFinder.html"
     license: "GPL-3 + file LICENSE"
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "8f8c295ffef5bed9ae8449a8d129ef549ccbac71"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/scdblfinder
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: decontx-celda
     title: "DecontX/celda"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://bioconductor.org/packages/release/bioc/html/celda.html"
     license: "MIT + file LICENSE"
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "ab63841015b618915dbee4fccbb24822a79ae4e1"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/decontx-celda
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: scuttle
     title: "scuttle"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://bioconductor.org/packages/release/bioc/html/scuttle.html"
     license: GPL-3
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "88a483825ee583c0f15f88dab95e36384af8d1c5"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/scuttle
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: scran
     title: "scran"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://bioconductor.org/packages/release/bioc/html/scran.html"
     license: GPL-3
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "569d2f89d928451efa912f52f213af2f47c3a695"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/scran
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: scater
     title: "scater"
     status: reviewed
@@ -113,14 +113,14 @@ entries:
     notes: "link-only; no source acquired; source repo URL points to bioconductor.org only"
   - id: singlecellexperiment
     title: "SingleCellExperiment"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html"
     license: GPL-3
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
+    version: "9972b11175aa389e777ca38da4a31491636bb6fe"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/singlecellexperiment
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: clusterprofiler
     title: "clusterProfiler"
     status: planned
@@ -233,14 +233,14 @@ entries:
     notes: "Planned placeholder only."
   - id: sctransform
     title: "SCTransform"
-    status: reviewed
+    status: acquired
     source_type: package_documentation
     upstream: "https://CRAN.R-project.org/package=sctransform"
     license: "GPL-3 | file LICENSE"
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; not a Bioconductor package; CRAN is primary distribution"
+    version: "49e35b5aeb76a602910207cbfde1561093340be3"
+    acquisition_mode: git_submodule
+    local_path: sources/upstream/sctransform
+    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
   - id: seurat-integration
     title: "Seurat integration"
     status: planned

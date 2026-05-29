@@ -108,12 +108,29 @@ def check_sources_lock(repo_root, ref_ids, errors):
 
 
 def check_upstream_dir(repo_root, errors):
-    """Check that sources/upstream/ contains only .gitkeep."""
+    """Check that sources/upstream/ contains only .gitkeep and recorded submodule dirs."""
     upstream_dir = repo_root / "sources" / "upstream"
     if not upstream_dir.exists():
         errors.append("sources/upstream/ directory does not exist")
         return
-    allowed = {".gitkeep"}
+
+    # Load allowed submodule dirs from sources.lock.yaml
+    allowed_submodule_dirs = set()
+    lock_path = repo_root / "sources.lock.yaml"
+    try:
+        lock_data = load_yaml(lock_path)
+        for source in lock_data.get("sources", []):
+            if source.get("acquisition_mode") == "git_submodule":
+                local_path = source.get("local_path", "")
+                expected_prefix = "sources/upstream/"
+                if local_path.startswith(expected_prefix):
+                    dir_name = local_path[len(expected_prefix):]
+                    if dir_name and "/" not in dir_name:
+                        allowed_submodule_dirs.add(dir_name)
+    except Exception:
+        pass  # If lock file can't be parsed, no dirs are allowed
+
+    allowed = {".gitkeep"} | allowed_submodule_dirs
     for item in sorted(upstream_dir.iterdir()):
         if item.name not in allowed:
             errors.append(

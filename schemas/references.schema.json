@@ -32,7 +32,7 @@
           "upstream": { "type": ["string", "null"] },
           "license": { "type": ["string", "null"] },
           "version": { "type": ["string", "null"] },
-          "acquisition_mode": { "enum": ["not_acquired", "link_only", "vendored", "generated_lock"] },
+          "acquisition_mode": { "enum": ["not_acquired", "link_only", "vendored", "generated_lock", "git_submodule"] },
           "local_path": { "type": ["string", "null"] },
           "notes": { "type": "string" }
         }

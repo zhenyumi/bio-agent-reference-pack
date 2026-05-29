@@ -1,6 +1,6 @@
 # Licenses
 
-This repository is license-aware, but no upstream source files have been acquired yet.
+This repository is license-aware. Acquired Batch 1 sources are git submodules pinned in `sources.lock.yaml`. License fields are metadata records and do not permit vendoring unrelated full text. No PDFs, archives, or copied rendered docs were added.
 
 Future source entries must record:
 

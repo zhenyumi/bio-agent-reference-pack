@@ -13,6 +13,7 @@ Checks:
 - Localhost and private URLs
 - Absolute home directory paths (POSIX and Windows)
 - Unexpected files under sources/upstream/ other than .gitkeep
+- Forbidden file types inside acquired submodule working trees
 
 Usage:
     python3 scripts/scan_repo_hygiene.py         # scan tracked files only
@@ -123,15 +124,72 @@ def scan_forbidden_extensions(file_paths, repo_root, errors):
 
 
 def scan_upstream_dir(repo_root, errors):
-    """Check that sources/upstream/ contains only .gitkeep."""
+    """Check that sources/upstream/ contains only .gitkeep and recorded submodule dirs."""
     upstream_dir = repo_root / "sources" / "upstream"
-    if upstream_dir.exists():
-        allowed = {".gitkeep"}
-        for item in upstream_dir.iterdir():
-            if item.name not in allowed:
-                errors.append(
-                    f"sources/upstream/ contains unexpected file: {item.name}"
-                )
+    if not upstream_dir.exists():
+        return
+
+    # Load allowed submodule dirs from sources.lock.yaml
+    allowed_submodule_dirs = set()
+    lock_path = repo_root / "sources.lock.yaml"
+    try:
+        import yaml
+        with open(lock_path, "r", encoding="utf-8") as f:
+            lock_data = yaml.safe_load(f)
+        for source in lock_data.get("sources", []):
+            if source.get("acquisition_mode") == "git_submodule":
+                local_path = source.get("local_path", "")
+                expected_prefix = "sources/upstream/"
+                if local_path.startswith(expected_prefix):
+                    dir_name = local_path[len(expected_prefix):]
+                    if dir_name and "/" not in dir_name:
+                        allowed_submodule_dirs.add(dir_name)
+    except Exception:
+        pass  # If lock file can't be parsed, no dirs are allowed
+
+    allowed = {".gitkeep"} | allowed_submodule_dirs
+    for item in upstream_dir.iterdir():
+        if item.name not in allowed:
+            errors.append(
+                f"sources/upstream/ contains unexpected file: {item.name}"
+            )
+
+
+def scan_submodule_forbidden_files(repo_root, errors):
+    """Check acquired submodule working trees for forbidden file extensions."""
+    import os
+
+    # Load allowed submodule dirs from sources.lock.yaml
+    allowed_submodule_dirs = set()
+    lock_path = repo_root / "sources.lock.yaml"
+    try:
+        import yaml
+        with open(lock_path, "r", encoding="utf-8") as f:
+            lock_data = yaml.safe_load(f)
+        for source in lock_data.get("sources", []):
+            if source.get("acquisition_mode") == "git_submodule":
+                local_path = source.get("local_path", "")
+                if local_path:
+                    allowed_submodule_dirs.add(repo_root / local_path)
+    except Exception:
+        pass  # If lock file can't be parsed, no dirs are scanned
+
+    for submodule_dir in allowed_submodule_dirs:
+        if not submodule_dir.exists() or not submodule_dir.is_dir():
+            continue
+        for root, dirs, files in os.walk(submodule_dir):
+            # Skip .git directory
+            dirs[:] = [d for d in dirs if d != ".git"]
+            for filename in files:
+                file_path = Path(root) / filename
+                rel_path = file_path.relative_to(repo_root)
+                lower = filename.lower()
+                for candidate in sorted(FORBIDDEN_EXTENSIONS, key=len, reverse=True):
+                    if lower.endswith(candidate):
+                        errors.append(
+                            f"Forbidden file type '{candidate}' in submodule: {rel_path}"
+                        )
+                        break
 
 
 def scan_file_contents(file_paths, repo_root, errors):
@@ -187,6 +245,9 @@ def scan(repo_root=None, file_paths=None, check_upstream=True):
     # Check upstream directory
     if check_upstream:
         scan_upstream_dir(repo_root, errors)
+
+    # Check submodule working trees for forbidden file types
+    scan_submodule_forbidden_files(repo_root, errors)
 
     # Scan file contents for secret patterns
     scan_file_contents(file_paths, repo_root, errors)

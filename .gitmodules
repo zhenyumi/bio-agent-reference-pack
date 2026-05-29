@@ -1,0 +1,27 @@
+[submodule "sources/upstream/osca"]
+	path = sources/upstream/osca
+	url = https://github.com/OSCA-source/OSCA
+[submodule "sources/upstream/osca-advanced"]
+	path = sources/upstream/osca-advanced
+	url = https://github.com/OSCA-source/OSCA.advanced
+[submodule "sources/upstream/seurat"]
+	path = sources/upstream/seurat
+	url = https://github.com/satijalab/seurat
+[submodule "sources/upstream/scuttle"]
+	path = sources/upstream/scuttle
+	url = https://git.bioconductor.org/packages/scuttle
+[submodule "sources/upstream/scran"]
+	path = sources/upstream/scran
+	url = https://git.bioconductor.org/packages/scran
+[submodule "sources/upstream/singlecellexperiment"]
+	path = sources/upstream/singlecellexperiment
+	url = https://git.bioconductor.org/packages/SingleCellExperiment
+[submodule "sources/upstream/scdblfinder"]
+	path = sources/upstream/scdblfinder
+	url = https://git.bioconductor.org/packages/scDblFinder
+[submodule "sources/upstream/decontx-celda"]
+	path = sources/upstream/decontx-celda
+	url = https://git.bioconductor.org/packages/celda
+[submodule "sources/upstream/sctransform"]
+	path = sources/upstream/sctransform
+	url = https://github.com/satijalab/sctransform
