@@ -68,6 +68,7 @@ site/
 public/
 out/
 exports/
+reports/
 coverage/
 htmlcov/
 *.egg-info/

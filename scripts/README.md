@@ -4,6 +4,37 @@ Future scripts should perform narrow mechanical checks, such as schema validatio
 
 Scripts must not summarize scientific guidelines or decide source priority, license status, or redistribution rights.
 
+## install-opencode.sh
+
+The top-level `install-opencode.sh` is a Bash wrapper that delegates to the
+Python scripts below. It provides a familiar installer UX while keeping a single
+Python implementation.
+
+See the repository `README.md` for usage and examples.
+
+### Relationship to Python scripts
+
+| Bash command | Delegates to |
+|---|---|
+| `--validate` | Runs `validate_metadata.py`, `scan_repo_hygiene.py --all`, `export_project_reference.py`, `build_release_manifest.py`, `verify_export_bundle.py`, `export_opencode_skill.py` in sequence |
+| `--project` / `--target` | `python3 scripts/install_opencode_skill.py --target <path>` |
+| `--project ... --force` | `python3 scripts/install_opencode_skill.py --target <path> --force` |
+| `--project ... --dry-run` | `python3 scripts/install_opencode_skill.py --target <path> --dry-run` |
+| `--project ... --update` | Confirms installation exists, then calls `install_opencode_skill.py --force` |
+| `--project ... --uninstall` | `rm -rf <path>/.opencode/skills/ref-bio/` (Bash-only; does not call Python) |
+
+### Validation behavior
+
+`--validate` runs all six checks in order and exits on the first failure. It
+requires no downstream project. Generated `exports/` is intentionally
+git-ignored after validation runs.
+
+### Uninstall behavior
+
+`--uninstall` only removes `.opencode/skills/ref-bio/` from the target project.
+It never deletes `.opencode/`, `.opencode/skills/`, other skills, or unrelated
+project files.
+
 ## validate_metadata.py
 
 Run: `python3 scripts/validate_metadata.py`
@@ -90,3 +121,59 @@ Builds a release manifest at `exports/project-reference/MANIFEST.yaml` with SHA-
 Run: `python3 scripts/verify_export_bundle.py`
 
 Verifies the export bundle integrity: checks required files exist, forbidden directories are absent, reference entries have only allowed fields, and manifest hashes/sizes match current files. Accepts optional CLI argument for custom export directory path.
+
+## export_opencode_skill.py
+
+Run: `python3 scripts/export_opencode_skill.py`
+
+Creates an exportable `/ref-bio` OpenCode skill bundle at
+`exports/opencode-skill/ref-bio/`. The script first generates and verifies the
+lightweight project reference bundle, then copies:
+
+- `skills/ref-bio/SKILL.md`
+- `exports/project-reference/` as `reference-pack/`
+
+It does not copy `sources/`, `acquisition/`, nested `exports/`, `.git/`, raw
+datasets, PDFs, archives, or generated analysis outputs.
+
+Optional arguments:
+
+```sh
+python3 scripts/export_opencode_skill.py --out exports/opencode-skill/ref-bio --force
+```
+
+## install_opencode_skill.py
+
+Run:
+
+```sh
+python3 scripts/install_opencode_skill.py --target ../my-analysis-project
+```
+
+Installs the exported `/ref-bio` OpenCode skill into a downstream project at
+`.opencode/skills/ref-bio/` by default. The script builds the skill export first,
+then copies only the skill bundle.
+
+Options:
+
+- `--target PATH` — required downstream project path
+- `--dest PATH` — optional destination relative to target, default `.opencode/skills/ref-bio`
+- `--force` — overwrite an existing installation
+- `--dry-run` — report planned actions without copying into the target
+
+## Validation sequence
+
+Run this local validation sequence before requesting review:
+
+```sh
+python3 scripts/validate_metadata.py
+python3 scripts/scan_repo_hygiene.py --all
+python3 scripts/check_upstream_updates.py
+python3 scripts/build_link_catalog.py
+python3 scripts/export_project_reference.py
+python3 scripts/build_release_manifest.py
+python3 scripts/verify_export_bundle.py
+python3 scripts/export_opencode_skill.py
+python3 -m unittest discover -s tests
+git diff --check
+```

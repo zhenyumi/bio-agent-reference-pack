@@ -33,3 +33,36 @@ End-to-end integration test that runs the full export pipeline (build_link_catal
 - forbidden directories (sources/, acquisition/) are absent
 - manifest declares includes_upstream_source_files: false
 - verifier catches tampered hashes, extra files, and forbidden directories
+
+## test_opencode_skill_export.py
+
+Run: `python3 -m unittest tests/test_opencode_skill_export.py`
+
+Tests that `scripts/export_opencode_skill.py` creates the `/ref-bio` skill
+bundle with `SKILL.md`, a lightweight `reference-pack/`, indexes, policies, and
+no forbidden source/acquisition/export directories.
+
+## test_opencode_skill_install.py
+
+Run: `python3 -m unittest tests/test_opencode_skill_install.py`
+
+Tests that `scripts/install_opencode_skill.py` supports dry runs, installs into
+a temporary downstream project, refuses accidental overwrite, supports
+`--force`, and does not install forbidden source/acquisition/export directories.
+
+## test_install_opencode_sh.py
+
+Run: `python3 -m unittest tests/test_install_opencode_sh.py`
+
+Tests that `install-opencode.sh` behaves correctly:
+
+- Shows help on `--help` and no-args
+- Lists `ref-bio` and `/ref-bio` on `--list`
+- Runs validation checks on `--validate`
+- Installs the skill on `--project`
+- Does not write on `--dry-run`
+- Supports `--target` as alias for `--project`
+- Overwrites on `--project ... --force`
+- Reports error on `--update` when not installed
+- Removes only `.opencode/skills/ref-bio/` on `--uninstall`, preserving other
+  `.opencode/` files
