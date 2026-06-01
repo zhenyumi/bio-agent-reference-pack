@@ -70,9 +70,23 @@ Current validation covers metadata, repository hygiene, and export pipeline:
 - Indexes remain routing maps only; they are not scientific guidance.
 - `policies/agent-reading-protocol.md` directs agents to retrieve upstream documentation on demand rather than relying on vendored local copies.
 
-## 11. Next Phase
+## 11. Stage 4 – Lightweight Update-Review Scaffolding (Current)
 
-After this Stage 2 lightweight completion and Stage 3 reading-map phase is reviewed and committed, the next phase should build downstream project reference bundles using the link-only catalog. If a future project requires local acquisition, the existing `pinned_vendor_snapshot` schema, manifest format, and build scripts (if retained) can be used to re-acquire sources under a strict snapshot policy.
+Update checks are now local, deterministic, and safe by default:
+
+- `scripts/check_upstream_updates.py` reports repository state without network access, URL fetching, source downloads, or git clones.
+- Upstream changes are visible through metadata reports (mode counts, license status, missing URLs, index cross-references, unused IDs), not silently applied to downstream projects.
+- Any future change to source versions, source priority, license fields, or acquisition modes requires review before implementation.
+- The `--online` flag is reserved for future reviewed implementation; currently it only prints a stub message and exits.
+- CI runs `check_upstream_updates.py` after metadata validation and hygiene scan, before export generation.
+
+## 12. Next Phase
+
+After Stage 4 is reviewed and committed, future phases may:
+
+- Build downstream project reference bundles using the link-only catalog and the existing export pipeline.
+- Implement reviewed online update checks under the `--online` flag (requires Codex/review approval before any network code is added).
+- Re-acquire sources under a strict snapshot policy if a future project requires local acquisition, reusing the existing `pinned_vendor_snapshot` schema and manifest format.
 
 ## Stage 2 Acceptance Criteria
 

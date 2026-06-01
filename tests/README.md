@@ -16,6 +16,12 @@ Run: `python3 -m unittest tests/test_repo_hygiene.py`
 
 Tests that the repository hygiene scanner passes against the current repository state. Includes regression tests ensuring secrets in comment lines, absolute paths, and clean files are handled correctly by the scanner.
 
+## test_check_upstream_updates.py
+
+Run: `python3 -m unittest tests/test_check_upstream_updates.py`
+
+Tests that the upstream update check script runs successfully against the current repository state. Verifies that stdout includes mode counts, `unknown_pending_review` summary, `sources.lock.yaml` empty state, and `sources/upstream/` `.gitkeep`-only confirmation.
+
 ## test_export_pipeline.py
 
 Run: `python3 -m unittest tests/test_export_pipeline.py`

@@ -40,6 +40,33 @@ Add `--all` to also scan untracked non-ignored files:
 
     python3 scripts/scan_repo_hygiene.py --all
 
+## check_upstream_updates.py
+
+Run: `python3 scripts/check_upstream_updates.py`
+
+Lightweight update-review and lock-policy check. Local, deterministic, safe by default.
+
+Reports:
+- Total references by `acquisition_mode`
+- Entries with `license: unknown_pending_review`
+- Entries missing upstream URLs or `license_evidence_url`
+- `metadata_only` and `defer` entries with routing notes
+- `sources.lock.yaml` state (empty or acquired)
+- `sources/upstream/` state (`.gitkeep`-only or unexpected files)
+- Index cross-reference consistency (`planned_source_ids` vs `references.yaml`)
+- Unused source IDs (not referenced by any index)
+
+Default behavior is offline only:
+- No network access
+- No URL fetching
+- No source downloads
+- No git clone
+- No scientific summaries
+
+Add `--online` for a reserved stub. Online upstream checks are intentionally not implemented in this lightweight stage.
+
+Exit 0 for internal consistency. Exit 1 only for mechanical errors (invalid YAML, missing upstream for `link_only`, unexpected files in `sources/upstream/`). Warnings (missing evidence URLs, unused IDs) are reported but do not fail.
+
 ## build_link_catalog.py
 
 Run: `python3 scripts/build_link_catalog.py`

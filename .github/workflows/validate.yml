@@ -17,6 +17,7 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python3 scripts/validate_metadata.py
       - run: python3 scripts/scan_repo_hygiene.py
+      - run: python3 scripts/check_upstream_updates.py
       - run: python3 scripts/build_link_catalog.py
       - run: python3 scripts/export_project_reference.py
       - run: python3 scripts/build_release_manifest.py
