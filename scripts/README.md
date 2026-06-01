@@ -16,7 +16,10 @@ Validates:
 - Reference IDs in `references.yaml` are unique
 - `planned_source_ids` in all `indexes/*.yaml` files reference valid reference IDs
 - `sources.lock.yaml` acquired sources reference valid reference IDs
-- `sources/upstream/` contains only `.gitkeep`
+- `pinned_vendor_snapshot` manifests parse, match schema, and match disk hashes/sizes
+- Snapshot contents stay inside the strict source/documentation-source allowlist
+- `.gitmodules` and git index gitlinks match `git_submodule` entries in `sources.lock.yaml`
+- `sources/upstream/` contains only `.gitkeep` and recorded acquisition directories
 - Required project-control paths are not git-ignored
 
 ## scan_repo_hygiene.py
@@ -30,7 +33,8 @@ Scans tracked files for:
 - Private IP addresses (10.x, 172.16-31.x, 192.168.x)
 - Localhost and private URLs
 - Absolute home directory paths (POSIX and Windows formats)
-- Unexpected files under `sources/upstream/` other than `.gitkeep`
+- Unexpected files under `sources/upstream/` other than `.gitkeep` and recorded acquisition directories
+- Forbidden raw/test/generated content inside acquired source directories
 
 Add `--all` to also scan untracked non-ignored files:
 

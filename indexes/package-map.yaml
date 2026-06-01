@@ -1,120 +1,120 @@
-schema_version: "0.1"
-description: "Planned package-to-source routing only. This file must not summarize package behavior."
+schema_version: '0.1'
+description: Planned package-to-source routing only. This file must not summarize package behavior.
 packages:
-  - package: Seurat
-    planned_source_ids:
-      - seurat
-      - seurat-integration
-      - seurat-reference-mapping
-      - seurat-spatial
-  - package: scDblFinder
-    planned_source_ids:
-      - scdblfinder
-  - package: celda
-    planned_source_ids:
-      - decontx-celda
-  - package: scuttle
-    planned_source_ids:
-      - scuttle
-  - package: scran
-    planned_source_ids:
-      - scran
-  - package: scater
-    planned_source_ids:
-      - scater
-  - package: SingleCellExperiment
-    planned_source_ids:
-      - singlecellexperiment
-  - package: clusterProfiler
-    planned_source_ids:
-      - clusterprofiler
-  - package: MAST
-    planned_source_ids:
-      - mast
-  - package: SingleR
-    planned_source_ids:
-      - singler
-  - package: LIANA
-    planned_source_ids:
-      - liana
-  - package: CellChat
-    planned_source_ids:
-      - cellchat
-  - package: monocle3
-    planned_source_ids:
-      - monocle3
-  - package: renv
-    planned_source_ids:
-      - renv
-  - package: SCTransform
-    planned_source_ids:
-      - sctransform
-  - package: Azimuth
-    planned_source_ids:
-      - azimuth
-  - package: batchelor
-    planned_source_ids:
-      - batchelor
-  - package: Harmony
-    planned_source_ids:
-      - harmony
-  - package: celldex
-    planned_source_ids:
-      - celldex
-  - package: enrichplot
-    planned_source_ids:
-      - enrichplot
-  - package: fgsea
-    planned_source_ids:
-      - fgsea
-  - package: msigdbr
-    planned_source_ids:
-      - msigdbr
-  - package: limma
-    planned_source_ids:
-      - limma
-  - package: edgeR
-    planned_source_ids:
-      - edger
-  - package: DESeq2
-    planned_source_ids:
-      - deseq2
-  - package: SpatialExperiment
-    planned_source_ids:
-      - spatialexperiment
-  - package: SpatialFeatureExperiment
-    planned_source_ids:
-      - spatialfeatureexperiment
-  - package: STutility
-    planned_source_ids:
-      - stutility
-  - package: BANKSY
-    planned_source_ids:
-      - banksy
-  - package: nnSVG
-    planned_source_ids:
-      - nnsvg
-  - package: squidpy
-    planned_source_ids:
-      - squidpy
-  - package: Giotto
-    planned_source_ids:
-      - giotto
-  - package: BayesSpace
-    planned_source_ids:
-      - bayesspace
-  - package: SPARK-X
-    planned_source_ids:
-      - spark-x
-  - package: NicheNet
-    planned_source_ids:
-      - nichenet
-  - package: slingshot
-    planned_source_ids:
-      - slingshot
-  - package: tradeSeq
-    planned_source_ids:
-      - tradeseq
-  - package: SoupX
-    planned_source_ids:
-      - soupx
+- package: Seurat
+  planned_source_ids:
+  - seurat
+  - seurat-integration
+  - seurat-reference-mapping
+  - seurat-spatial
+- package: scDblFinder
+  planned_source_ids:
+  - scdblfinder
+- package: celda
+  planned_source_ids:
+  - decontx-celda
+- package: scuttle
+  planned_source_ids:
+  - scuttle
+- package: scran
+  planned_source_ids:
+  - scran
+- package: scater
+  planned_source_ids:
+  - scater
+- package: SingleCellExperiment
+  planned_source_ids:
+  - singlecellexperiment
+- package: clusterProfiler
+  planned_source_ids:
+  - clusterprofiler
+- package: MAST
+  planned_source_ids:
+  - mast
+- package: SingleR
+  planned_source_ids:
+  - singler
+- package: LIANA
+  planned_source_ids:
+  - liana
+- package: CellChat
+  planned_source_ids:
+  - cellchat
+- package: monocle3
+  planned_source_ids:
+  - monocle3
+- package: renv
+  planned_source_ids:
+  - renv
+- package: SCTransform
+  planned_source_ids:
+  - sctransform
+- package: Azimuth
+  planned_source_ids:
+  - azimuth
+- package: batchelor
+  planned_source_ids:
+  - batchelor
+- package: Harmony
+  planned_source_ids:
+  - harmony
+- package: celldex
+  planned_source_ids:
+  - celldex
+- package: enrichplot
+  planned_source_ids:
+  - enrichplot
+- package: fgsea
+  planned_source_ids:
+  - fgsea
+- package: msigdbr
+  planned_source_ids:
+  - msigdbr
+- package: limma
+  planned_source_ids:
+  - limma
+- package: edgeR
+  planned_source_ids:
+  - edger
+- package: DESeq2
+  planned_source_ids:
+  - deseq2
+- package: SpatialExperiment
+  planned_source_ids:
+  - spatialexperiment
+- package: SpatialFeatureExperiment
+  planned_source_ids:
+  - spatialfeatureexperiment
+- package: STutility
+  planned_source_ids:
+  - stutility
+- package: BANKSY
+  planned_source_ids:
+  - banksy
+- package: nnSVG
+  planned_source_ids:
+  - nnsvg
+- package: squidpy
+  planned_source_ids:
+  - squidpy
+- package: Giotto
+  planned_source_ids:
+  - giotto
+- package: BayesSpace
+  planned_source_ids:
+  - bayesspace
+- package: SPARK-X
+  planned_source_ids:
+  - spark-x
+- package: NicheNet
+  planned_source_ids:
+  - nichenet
+- package: slingshot
+  planned_source_ids:
+  - slingshot
+- package: tradeSeq
+  planned_source_ids:
+  - tradeseq
+- package: SoupX
+  planned_source_ids:
+  - soupx

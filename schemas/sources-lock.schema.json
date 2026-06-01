@@ -30,11 +30,15 @@
           "version_or_commit": { "type": "string" },
           "checked_date": { "type": "string", "format": "date" },
           "license": { "type": "string" },
+          "license_evidence_url": { "type": ["string", "null"] },
           "local_path": { "type": "string" },
-          "acquisition_mode": { "enum": ["link_only", "vendored", "generated_lock", "git_submodule"] }
+          "upstream_url": { "type": ["string", "null"] },
+          "manifest_path": { "type": ["string", "null"] },
+          "acquisition_mode": {
+            "enum": ["git_submodule", "pinned_vendor_snapshot"]
+          }
         }
       }
     }
   }
 }
-

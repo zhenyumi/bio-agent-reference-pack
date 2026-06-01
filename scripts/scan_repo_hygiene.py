@@ -27,7 +27,60 @@ from pathlib import Path
 
 FORBIDDEN_EXTENSIONS = {
     ".pdf", ".zip", ".tar", ".tar.gz", ".tgz", ".7z", ".rar",
+    # Raw scientific data file extensions (added in Stage 2 to prevent
+    # vendoring of binary/raw datasets in pinned_vendor_snapshot dirs).
+    ".h5ad", ".h5", ".hdf5",
+    ".loom",
+    ".bam", ".bai", ".sam",
+    ".fastq", ".fastq.gz", ".fq", ".fq.gz",
+    ".fasta", ".fasta.gz", ".fa", ".fa.gz",
+    ".gtf", ".gff", ".gff3",
+    ".bed", ".wig", ".bigwig", ".bw",
+    ".parquet", ".npz", ".npy",
+    ".csv.gz", ".tsv.gz",
 }
+
+SNAPSHOT_FORBIDDEN_DIRS = {
+    "data",
+    "extdata",
+    "testdata",
+    "tests",
+    "docs",
+    "outdated",
+    "pkgdown",
+    "site",
+    "build",
+    "dist",
+    "__pycache__",
+    ".cache",
+    ".tox",
+    ".pytest_cache",
+    ".mypy_cache",
+    ".ruff_cache",
+    ".git",
+    ".github",
+    ".idea",
+    ".vscode",
+    ".ipynb_checkpoints",
+}
+
+SNAPSHOT_FORBIDDEN_EXTENSIONS = {
+    ".rda", ".rdata", ".rds", ".csv", ".tsv", ".gmt", ".mtx",
+    ".pickle", ".pkl", ".jpg", ".jpeg", ".png", ".gif", ".svg",
+    ".nb", ".ipynb", ".html", ".htm", ".rel",
+    ".rproj",
+}
+
+SNAPSHOT_TOP_LEVEL_PREFIXES = ("README", "NEWS", "LICENSE", "LICENCE", "COPYING")
+SNAPSHOT_TOP_LEVEL_NAMES = {
+    "DESCRIPTION",
+    "NAMESPACE",
+    "pyproject.toml",
+    "setup.py",
+    "setup.cfg",
+}
+SNAPSHOT_VIGNETTE_EXTENSIONS = {".rmd", ".qmd", ".md", ".bib"}
+SNAPSHOT_INST_BOOK_EXTENSIONS = {".rmd", ".qmd", ".md", ".bib", ".yml", ".yaml", ".css"}
 
 SECRET_PATTERNS = [
     ("openai_api_key", re.compile(r"sk-(?:proj|svcacct|live)-[a-zA-Z0-9\-]{20,}")),
@@ -124,12 +177,12 @@ def scan_forbidden_extensions(file_paths, repo_root, errors):
 
 
 def scan_upstream_dir(repo_root, errors):
-    """Check that sources/upstream/ contains only .gitkeep and recorded submodule dirs."""
+    """Check that sources/upstream/ contains only .gitkeep and recorded acquisition dirs."""
     upstream_dir = repo_root / "sources" / "upstream"
     if not upstream_dir.exists():
         return
 
-    # Load allowed submodule dirs from sources.lock.yaml
+    # Load allowed acquisition dirs from sources.lock.yaml
     allowed_submodule_dirs = set()
     lock_path = repo_root / "sources.lock.yaml"
     try:
@@ -137,13 +190,15 @@ def scan_upstream_dir(repo_root, errors):
         with open(lock_path, "r", encoding="utf-8") as f:
             lock_data = yaml.safe_load(f)
         for source in lock_data.get("sources", []):
-            if source.get("acquisition_mode") == "git_submodule":
-                local_path = source.get("local_path", "")
-                expected_prefix = "sources/upstream/"
-                if local_path.startswith(expected_prefix):
-                    dir_name = local_path[len(expected_prefix):]
-                    if dir_name and "/" not in dir_name:
-                        allowed_submodule_dirs.add(dir_name)
+            mode = source.get("acquisition_mode")
+            if mode not in ("git_submodule", "pinned_vendor_snapshot"):
+                continue
+            local_path = source.get("local_path", "")
+            expected_prefix = "sources/upstream/"
+            if local_path.startswith(expected_prefix):
+                dir_name = local_path[len(expected_prefix):]
+                if dir_name and "/" not in dir_name:
+                    allowed_submodule_dirs.add(dir_name)
     except Exception:
         pass  # If lock file can't be parsed, no dirs are allowed
 
@@ -156,25 +211,27 @@ def scan_upstream_dir(repo_root, errors):
 
 
 def scan_submodule_forbidden_files(repo_root, errors):
-    """Check acquired submodule working trees for forbidden file extensions."""
+    """Check acquired submodule and pinned_vendor_snapshot working trees for forbidden file extensions."""
     import os
 
-    # Load allowed submodule dirs from sources.lock.yaml
-    allowed_submodule_dirs = set()
+    # Load allowed acquisition dirs from sources.lock.yaml
+    acquired_dirs = []
     lock_path = repo_root / "sources.lock.yaml"
     try:
         import yaml
         with open(lock_path, "r", encoding="utf-8") as f:
             lock_data = yaml.safe_load(f)
         for source in lock_data.get("sources", []):
-            if source.get("acquisition_mode") == "git_submodule":
-                local_path = source.get("local_path", "")
-                if local_path:
-                    allowed_submodule_dirs.add(repo_root / local_path)
+            mode = source.get("acquisition_mode")
+            if mode not in ("git_submodule", "pinned_vendor_snapshot"):
+                continue
+            local_path = source.get("local_path", "")
+            if local_path:
+                acquired_dirs.append((repo_root / local_path, mode))
     except Exception:
         pass  # If lock file can't be parsed, no dirs are scanned
 
-    for submodule_dir in allowed_submodule_dirs:
+    for submodule_dir, mode in acquired_dirs:
         if not submodule_dir.exists() or not submodule_dir.is_dir():
             continue
         for root, dirs, files in os.walk(submodule_dir):
@@ -183,13 +240,54 @@ def scan_submodule_forbidden_files(repo_root, errors):
             for filename in files:
                 file_path = Path(root) / filename
                 rel_path = file_path.relative_to(repo_root)
+                rel_to_source = file_path.relative_to(submodule_dir).as_posix()
                 lower = filename.lower()
                 for candidate in sorted(FORBIDDEN_EXTENSIONS, key=len, reverse=True):
                     if lower.endswith(candidate):
                         errors.append(
-                            f"Forbidden file type '{candidate}' in submodule: {rel_path}"
+                            f"Forbidden file type '{candidate}' in acquired source: {rel_path}"
                         )
                         break
+                if mode == "pinned_vendor_snapshot":
+                    snapshot_reason = forbidden_snapshot_path_reason(rel_to_source)
+                    if snapshot_reason:
+                        errors.append(
+                            f"Forbidden snapshot content ({snapshot_reason}): {rel_path}"
+                        )
+
+
+def forbidden_snapshot_path_reason(rel_path):
+    """Return a reason when a pinned snapshot path violates the snapshot allowlist."""
+    if rel_path == "MANIFEST.yaml":
+        return None
+    lower = rel_path.lower()
+    parts = lower.split("/")
+    for part in parts:
+        if part in SNAPSHOT_FORBIDDEN_DIRS:
+            return f"directory '{part}'"
+    for candidate in sorted(SNAPSHOT_FORBIDDEN_EXTENSIONS, key=len, reverse=True):
+        if lower.endswith(candidate):
+            return f"extension '{candidate}'"
+    path = Path(rel_path)
+    original_parts = rel_path.split("/")
+    if len(original_parts) == 1:
+        name = original_parts[0]
+        if name in SNAPSHOT_TOP_LEVEL_NAMES:
+            return None
+        if any(name.startswith(prefix) for prefix in SNAPSHOT_TOP_LEVEL_PREFIXES):
+            return None
+        return "outside snapshot allowlist"
+
+    if original_parts[0] in {"R", "src", "man"}:
+        return None
+    if original_parts[0] == "vignettes" and path.suffix.lower() in SNAPSHOT_VIGNETTE_EXTENSIONS:
+        return None
+    if rel_path == "inst/CITATION":
+        return None
+    if original_parts[:2] == ["inst", "book"] and path.suffix.lower() in SNAPSHOT_INST_BOOK_EXTENSIONS:
+        return None
+
+    return "outside snapshot allowlist"
 
 
 def scan_file_contents(file_paths, repo_root, errors):

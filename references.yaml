@@ -1,554 +1,677 @@
-schema_version: "0.1"
-description: "Planned source registry placeholders. No source has been acquired by this file."
+schema_version: '0.1'
+description: Planned source registry. No source has been acquired locally.
+  All real upstream sources are link-only and read on demand.
 entries:
-  - id: single-cell-best-practices
-    title: "single-cell best practices"
-    status: reviewed
-    source_type: guide
-    upstream: "https://www.sc-best-practices.org/"
-    license: unknown_pending_review
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "repo LICENSE observed, but rendered book license applicability remains unresolved; link-only; no source acquired"
-  - id: osca
-    title: "OSCA"
-    status: acquired
-    source_type: guide
-    upstream: "https://bioconductor.org/books/release/OSCA/"
-    license: CC BY 4.0
-    version: "fe7b362a3215622e06e987aa021d7eec2d0a1fba"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/osca
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: osca-advanced
-    title: "OSCA Advanced"
-    status: acquired
-    source_type: guide
-    upstream: "https://bioconductor.org/books/release/OSCA.advanced/"
-    license: CC BY 4.0
-    version: "06225560116192a4679c557c05887593050cc705"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/osca-advanced
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: osta
-    title: "OSTA"
-    status: reviewed
-    source_type: guide
-    upstream: "https://bioconductor.org/books/release/OSTA/"
-    license: unknown_pending_review
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "license not observed on rendered book page; partial evidence confidence; link-only; no source acquired"
-  - id: seurat
-    title: "Seurat"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://satijalab.org/seurat/"
-    license: "MIT + file LICENSE"
-    version: "d464e640cf30da8a45b690b61cdb9462b946b5a9"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/seurat
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: bioconductor-package-vignettes
-    title: "Bioconductor package vignettes"
-    status: reviewed
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/help/package-vignettes/"
-    license: unknown_pending_review
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "umbrella scope; redistribution restricted per terms-of-use; partial evidence confidence; link-only; no source acquired"
-  - id: scdblfinder
-    title: "scDblFinder"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/scDblFinder.html"
-    license: "GPL-3 + file LICENSE"
-    version: "8f8c295ffef5bed9ae8449a8d129ef549ccbac71"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/scdblfinder
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: decontx-celda
-    title: "DecontX/celda"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/celda.html"
-    license: "MIT + file LICENSE"
-    version: "ab63841015b618915dbee4fccbb24822a79ae4e1"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/decontx-celda
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: scuttle
-    title: "scuttle"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/scuttle.html"
-    license: GPL-3
-    version: "88a483825ee583c0f15f88dab95e36384af8d1c5"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/scuttle
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: scran
-    title: "scran"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/scran.html"
-    license: GPL-3
-    version: "569d2f89d928451efa912f52f213af2f47c3a695"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/scran
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: scater
-    title: "scater"
-    status: reviewed
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/scater.html"
-    license: GPL-3
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; source repo URL points to bioconductor.org only"
-  - id: singlecellexperiment
-    title: "SingleCellExperiment"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html"
-    license: GPL-3
-    version: "9972b11175aa389e777ca38da4a31491636bb6fe"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/singlecellexperiment
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: clusterprofiler
-    title: "clusterProfiler"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: mast
-    title: "MAST"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: singler
-    title: "SingleR"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: liana
-    title: "LIANA"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: cellchat
-    title: "CellChat"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: monocle3
-    title: "monocle3"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: renv
-    title: "renv"
-    status: reviewed
-    source_type: package_documentation
-    upstream: "https://rstudio.github.io/renv/"
-    license: "MIT + file LICENSE"
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; rendered docs and source repo have separate evidence locations"
-  - id: github-actions
-    title: "GitHub Actions"
-    status: reviewed
-    source_type: platform_documentation
-    upstream: "https://docs.github.com/en/actions"
-    license: unknown_pending_review
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "no license terms found on documentation page; partial evidence confidence; link-only; no source acquired"
-  - id: codex-agents-guidance
-    title: "Codex AGENTS.md guidance"
-    status: planned
-    source_type: agent_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: opencode-documentation
-    title: "OpenCode documentation"
-    status: planned
-    source_type: agent_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: gptomics-bioskills
-    title: "GPTomics/bioSkills"
-    status: planned
-    source_type: agent_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: sctransform
-    title: "SCTransform"
-    status: acquired
-    source_type: package_documentation
-    upstream: "https://CRAN.R-project.org/package=sctransform"
-    license: "GPL-3 | file LICENSE"
-    version: "49e35b5aeb76a602910207cbfde1561093340be3"
-    acquisition_mode: git_submodule
-    local_path: sources/upstream/sctransform
-    notes: "git submodule acquired; pinned in sources.lock.yaml; no source files copied manually"
-  - id: seurat-integration
-    title: "Seurat integration"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: seurat-reference-mapping
-    title: "Seurat reference mapping"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: azimuth
-    title: "Azimuth"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: batchelor
-    title: "batchelor"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: harmony
-    title: "Harmony"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: celldex
-    title: "celldex"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: enrichplot
-    title: "enrichplot"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: fgsea
-    title: "fgsea"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: msigdbr
-    title: "msigdbr"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: limma
-    title: "limma"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: edger
-    title: "edgeR"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: deseq2
-    title: "DESeq2"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: pseudobulk-de-guidance
-    title: "Pseudobulk differential expression guidance"
-    status: planned
-    source_type: guide
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: spatialexperiment
-    title: "SpatialExperiment"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: spatialfeatureexperiment
-    title: "SpatialFeatureExperiment"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: seurat-spatial
-    title: "Seurat spatial documentation"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: visium
-    title: "Visium documentation"
-    status: planned
-    source_type: platform_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: xenium
-    title: "Xenium documentation"
-    status: planned
-    source_type: platform_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: cosmx
-    title: "CosMx documentation"
-    status: planned
-    source_type: platform_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: stutility
-    title: "STutility"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: banksy
-    title: "BANKSY"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: nnsvg
-    title: "nnSVG"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: squidpy
-    title: "squidpy"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: giotto
-    title: "Giotto"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: bayesspace
-    title: "BayesSpace"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: spark-x
-    title: "SPARK-X"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: nichenet
-    title: "NicheNet"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: slingshot
-    title: "slingshot"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: tradeseq
-    title: "tradeSeq"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: soupx
-    title: "SoupX"
-    status: planned
-    source_type: package_documentation
-    upstream: null
-    license: null
-    version: null
-    acquisition_mode: not_acquired
-    local_path: null
-    notes: "Planned placeholder only."
-  - id: git-submodule-documentation
-    title: "Git submodule documentation"
-    status: reviewed
-    source_type: platform_documentation
-    upstream: "https://git-scm.com/docs/gitsubmodules"
-    license: GPL
-    version: null
-    acquisition_mode: link_only
-    local_path: null
-    notes: "link-only; no source acquired; reference manual page; GPL per git-scm.com/site license breakdown"
-
+- id: single-cell-best-practices
+  title: single-cell best practices
+  status: reviewed
+  source_type: guide
+  upstream: https://www.sc-best-practices.org/
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: repo LICENSE observed, but rendered book license applicability remains unresolved;
+    link-only; no source acquired
+- id: osca
+  title: OSCA
+  status: reviewed
+  source_type: guide
+  upstream: https://bioconductor.org/books/release/OSCA/
+  license: CC BY 4.0
+  license_evidence_url: https://github.com/OSCA-source/OSCA/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: osca-advanced
+  title: OSCA Advanced
+  status: reviewed
+  source_type: guide
+  upstream: https://bioconductor.org/books/release/OSCA.advanced/
+  license: CC BY 4.0
+  license_evidence_url: https://github.com/OSCA-source/OSCA.advanced/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: osta
+  title: OSTA
+  status: reviewed
+  source_type: guide
+  upstream: https://bioconductor.org/books/release/OSTA/
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: license not observed on rendered book page; partial evidence confidence;
+    link-only; no source acquired
+- id: seurat
+  title: Seurat
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://satijalab.org/seurat/
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/satijalab/seurat/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: bioconductor-package-vignettes
+  title: Bioconductor package vignettes
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/help/package-vignettes/
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: umbrella scope; redistribution restricted per terms-of-use; partial evidence
+    confidence; link-only; no source acquired
+- id: scdblfinder
+  title: scDblFinder
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/scDblFinder.html
+  license: GPL-3 + file LICENSE
+  license_evidence_url: https://github.com/plger/scDblFinder/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: decontx-celda
+  title: DecontX/celda
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/celda.html
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/campbio/celda/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: scuttle
+  title: scuttle
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/scuttle.html
+  license: GPL-3
+  license_evidence_url: https://github.com/Bioconductor/scuttle/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: scran
+  title: scran
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/scran.html
+  license: GPL-3
+  license_evidence_url: https://github.com/Bioconductor/scran/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: scater
+  title: scater
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/scater.html
+  license: GPL-3
+  license_evidence_url: https://github.com/Bioconductor/scater/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: singlecellexperiment
+  title: SingleCellExperiment
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/SingleCellExperiment.html
+  license: GPL-3
+  license_evidence_url: https://github.com/Bioconductor/SingleCellExperiment/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: clusterprofiler
+  title: clusterProfiler
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/clusterProfiler.html
+  license: Artistic-2.0
+  license_evidence_url: https://github.com/YuLab-SMU/clusterProfiler/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: mast
+  title: MAST
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/MAST.html
+  license: GPL (>= 2)
+  license_evidence_url: https://github.com/RGLab/MAST/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: singler
+  title: SingleR
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/SingleR.html
+  license: GPL-3
+  license_evidence_url: https://github.com/SingleR-inc/SingleR/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: liana
+  title: LIANA
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/saezlab/liana
+  license: GPL-3 + file LICENSE
+  license_evidence_url: https://github.com/saezlab/liana/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: cellchat
+  title: CellChat
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/sqjin/CellChat
+  license: GPL-3
+  license_evidence_url: https://github.com/sqjin/CellChat/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: monocle3
+  title: monocle3
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/cole-trapnell-lab/monocle3
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/cole-trapnell-lab/monocle3/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: renv
+  title: renv
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://rstudio.github.io/renv/
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/rstudio/renv/blob/main/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: github-actions
+  title: GitHub Actions
+  status: reviewed
+  source_type: platform_documentation
+  upstream: https://docs.github.com/en/actions
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: no license terms found on documentation page; partial evidence confidence;
+    link-only; no source acquired
+- id: codex-agents-guidance
+  title: Codex AGENTS.md guidance
+  status: reviewed
+  source_type: agent_documentation
+  upstream: https://github.com/openai/codex/blob/main/AGENTS.md
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: broad concept; public AGENTS.md guidance; no single bundled source acquired
+- id: opencode-documentation
+  title: OpenCode documentation
+  status: reviewed
+  source_type: agent_documentation
+  upstream: https://opencode.ai/docs
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: opencode.ai documentation page; license not separately published for docs;
+    link-only
+- id: gptomics-bioskills
+  title: GPTomics/bioSkills
+  status: planned
+  source_type: agent_documentation
+  upstream: null
+  license: null
+  license_evidence_url: null
+  version: null
+  acquisition_mode: defer
+  local_path: null
+  reading_priority: project_specific_read
+  notes: deferred; no clear single public upstream; not required by this reference
+    pack
+- id: sctransform
+  title: SCTransform
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://CRAN.R-project.org/package=sctransform
+  license: GPL-3 | file LICENSE
+  license_evidence_url: https://github.com/satijalab/sctransform/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: seurat-integration
+  title: Seurat integration
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://satijalab.org/seurat/articles/integration_introduction
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/satijalab/seurat/blob/master/LICENSE
+  version: null
+  acquisition_mode: metadata_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: routes to source_id=seurat; metadata only; no separate acquisition
+- id: seurat-reference-mapping
+  title: Seurat reference mapping
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://satijalab.org/seurat/articles/reference_mapping
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/satijalab/seurat/blob/master/LICENSE
+  version: null
+  acquisition_mode: metadata_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: routes to source_id=seurat; metadata only; no separate acquisition
+- id: azimuth
+  title: Azimuth
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/satijalab/azimuth
+  license: GPL-3 | file LICENSE
+  license_evidence_url: https://github.com/satijalab/azimuth/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: batchelor
+  title: batchelor
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/batchelor.html
+  license: GPL-3
+  license_evidence_url: https://github.com/Bioconductor/batchelor/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: harmony
+  title: Harmony
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/immunogenomics/harmony
+  license: GPL-3
+  license_evidence_url: https://github.com/immunogenomics/harmony/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: celldex
+  title: celldex
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/data/experiment/html/celldex.html
+  license: GPL-3
+  license_evidence_url: https://github.com/LTLA/celldex/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: enrichplot
+  title: enrichplot
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/enrichplot.html
+  license: Artistic-2.0
+  license_evidence_url: https://github.com/GuangchuangYu/enrichplot/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: fgsea
+  title: fgsea
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/fgsea.html
+  license: MIT + file LICENCE
+  license_evidence_url: https://github.com/alserglab/fgsea/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: msigdbr
+  title: msigdbr
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/igordot/msigdbr
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/igordot/msigdbr/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: limma
+  title: limma
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/limma.html
+  license: GPL (>=2)
+  license_evidence_url: https://github.com/cran/limma/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: edger
+  title: edgeR
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/edgeR.html
+  license: GPL (>=2)
+  license_evidence_url: https://github.com/Bioconductor/edgeR/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: deseq2
+  title: DESeq2
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/DESeq2.html
+  license: LGPL (>= 3)
+  license_evidence_url: https://github.com/thelovelab/DESeq2/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: pseudobulk-de-guidance
+  title: Pseudobulk differential expression guidance
+  status: reviewed
+  source_type: guide
+  upstream: https://www.nature.com/articles/s41587-021-01037-z
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: metadata_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: routes to source_id=limma,edger,deseq2; metadata only; no separate acquisition
+- id: spatialexperiment
+  title: SpatialExperiment
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/SpatialExperiment.html
+  license: GPL-3
+  license_evidence_url: https://github.com/drighelli/SpatialExperiment/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: spatialfeatureexperiment
+  title: SpatialFeatureExperiment
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/SpatialFeatureExperiment.html
+  license: Artistic-2.0
+  license_evidence_url: https://github.com/pachterlab/SpatialFeatureExperiment/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: seurat-spatial
+  title: Seurat spatial documentation
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://satijalab.org/seurat/
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/satijalab/seurat/blob/master/LICENSE
+  version: null
+  acquisition_mode: metadata_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: routes to source_id=seurat; no specific standalone page verified; metadata
+    only; no separate acquisition
+- id: visium
+  title: Visium documentation
+  status: reviewed
+  source_type: platform_documentation
+  upstream: https://www.10xgenomics.com/platforms/visium
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: 10x Genomics platform page; license not separately published; link-only;
+    no source acquired
+- id: xenium
+  title: Xenium documentation
+  status: reviewed
+  source_type: platform_documentation
+  upstream: https://www.10xgenomics.com/platforms/xenium
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: 10x Genomics platform page; license not separately published; link-only;
+    no source acquired
+- id: cosmx
+  title: CosMx documentation
+  status: reviewed
+  source_type: platform_documentation
+  upstream: https://nanostring.com/products/cosmx-spatial-molecular-imager/
+  license: unknown_pending_review
+  license_evidence_url: null
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: NanoString/Bruker platform page; license not separately published; link-only;
+    no source acquired
+- id: stutility
+  title: STutility
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/ludvigla/STUtility
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/ludvigla/STUtility/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: banksy
+  title: BANKSY
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/prabhakarlab/Banksy
+  license: unknown_pending_review
+  license_evidence_url: https://github.com/prabhakarlab/Banksy/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: non-standard dual license (MIT for academic, restrictions for commercial);
+    not standard SPDX; link-only; no source acquired
+- id: nnsvg
+  title: nnSVG
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/lmweber/nnSVG
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/lmweber/nnSVG/blob/master/LICENSE
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream LICENSE
+- id: squidpy
+  title: squidpy
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/scverse/squidpy
+  license: BSD-3-Clause
+  license_evidence_url: https://github.com/scverse/squidpy/blob/master/pyproject.toml
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream pyproject.toml
+- id: giotto
+  title: Giotto
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/drieslab/Giotto
+  license: MIT | file LICENSE
+  license_evidence_url: https://github.com/drieslab/Giotto/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: bayesspace
+  title: BayesSpace
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/BayesSpace.html
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/edward130603/BayesSpace/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: spark-x
+  title: SPARK-X
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/xzhoulab/SPARK
+  license: GPL-3
+  license_evidence_url: https://github.com/xzhoulab/SPARK/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: project_specific_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: nichenet
+  title: NicheNet
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/saeyslab/nichenetr
+  license: GPL-3
+  license_evidence_url: https://github.com/saeyslab/nichenetr/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: stable source_id is 'nichenet'; upstream repository is saeyslab/nichenetr;
+    link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: slingshot
+  title: slingshot
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/slingshot.html
+  license: Artistic-2.0
+  license_evidence_url: https://github.com/kstreet13/slingshot/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: tradeseq
+  title: tradeSeq
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://bioconductor.org/packages/release/bioc/html/tradeSeq.html
+  license: MIT + file LICENSE
+  license_evidence_url: https://github.com/statOmics/tradeSeq/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license verified from upstream DESCRIPTION
+- id: soupx
+  title: SoupX
+  status: reviewed
+  source_type: package_documentation
+  upstream: https://github.com/constantAmateur/SoupX
+  license: GPL-2
+  license_evidence_url: https://github.com/constantAmateur/SoupX/blob/master/DESCRIPTION
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: must_read
+  notes: link-only; no source acquired; license GPL-2 per upstream DESCRIPTION
+- id: git-submodule-documentation
+  title: Git submodule documentation
+  status: reviewed
+  source_type: platform_documentation
+  upstream: https://git-scm.com/docs/gitsubmodules
+  license: GPL
+  license_evidence_url: https://git-scm.com/site/license
+  version: null
+  acquisition_mode: link_only
+  local_path: null
+  reading_priority: optional_read
+  notes: link-only; no source acquired; reference manual page; GPL per git-scm.com/site
+    license breakdown

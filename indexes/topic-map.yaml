@@ -1,110 +1,110 @@
-schema_version: "0.1"
-description: "Planned topic-to-source routing only. This file must not summarize methods."
+schema_version: '0.1'
+description: Planned topic-to-source routing only. This file must not summarize methods.
 topics:
-  - id: scrnaseq_qc
-    planned_source_ids:
-      - single-cell-best-practices
-      - osca
-      - bioconductor-package-vignettes
-      - scuttle
-      - scater
-      - scran
-  - id: snrnaseq_qc
-    planned_source_ids:
-      - single-cell-best-practices
-      - osca
-      - scuttle
-      - scater
-      - scran
-  - id: seurat_workflow
-    planned_source_ids:
-      - seurat
-      - single-cell-best-practices
-      - seurat-integration
-      - seurat-reference-mapping
-      - sctransform
-      - azimuth
-  - id: spatial_transcriptomics
-    planned_source_ids:
-      - osta
-      - seurat
-      - spatialexperiment
-      - spatialfeatureexperiment
-      - seurat-spatial
-      - stutility
-      - banksy
-      - nnsvg
-      - squidpy
-      - giotto
-      - bayesspace
-      - spark-x
-      - visium
-      - xenium
-      - cosmx
-  - id: doublet_detection
-    planned_source_ids:
-      - scdblfinder
-      - single-cell-best-practices
-      - osca
-  - id: ambient_rna
-    planned_source_ids:
-      - decontx-celda
-      - single-cell-best-practices
-      - osca
-      - soupx
-  - id: normalization_integration
-    planned_source_ids:
-      - osca
-      - osca-advanced
-      - seurat
-      - scran
-      - scuttle
-      - sctransform
-      - harmony
-      - batchelor
-  - id: cell_annotation
-    planned_source_ids:
-      - singler
-      - single-cell-best-practices
-      - osca
-      - seurat
-      - celldex
-      - azimuth
-  - id: differential_expression
-    planned_source_ids:
-      - mast
-      - osca
-      - seurat
-      - bioconductor-package-vignettes
-      - limma
-      - edger
-      - deseq2
-  - id: enrichment_analysis
-    planned_source_ids:
-      - clusterprofiler
-      - bioconductor-package-vignettes
-      - enrichplot
-      - fgsea
-      - msigdbr
-  - id: cell_cell_communication
-    planned_source_ids:
-      - liana
-      - cellchat
-      - nichenet
-  - id: trajectory_analysis
-    planned_source_ids:
-      - monocle3
-      - osca
-      - osca-advanced
-      - slingshot
-      - tradeseq
-  - id: reproducibility_renv
-    planned_source_ids:
-      - renv
-      - github-actions
-  - id: pseudobulk_de
-    planned_source_ids:
-      - pseudobulk-de-guidance
-      - limma
-      - edger
-      - deseq2
+- id: scrnaseq_qc
+  planned_source_ids:
+  - single-cell-best-practices
+  - osca
+  - bioconductor-package-vignettes
+  - scuttle
+  - scater
+  - scran
+- id: snrnaseq_qc
+  planned_source_ids:
+  - single-cell-best-practices
+  - osca
+  - scuttle
+  - scater
+  - scran
+- id: seurat_workflow
+  planned_source_ids:
+  - seurat
+  - single-cell-best-practices
+  - seurat-integration
+  - seurat-reference-mapping
+  - sctransform
+  - azimuth
+- id: spatial_transcriptomics
+  planned_source_ids:
+  - osta
+  - seurat
+  - spatialexperiment
+  - spatialfeatureexperiment
+  - seurat-spatial
+  - stutility
+  - banksy
+  - nnsvg
+  - squidpy
+  - giotto
+  - bayesspace
+  - spark-x
+  - visium
+  - xenium
+  - cosmx
+- id: doublet_detection
+  planned_source_ids:
+  - scdblfinder
+  - single-cell-best-practices
+  - osca
+- id: ambient_rna
+  planned_source_ids:
+  - decontx-celda
+  - single-cell-best-practices
+  - osca
+  - soupx
+- id: normalization_integration
+  planned_source_ids:
+  - osca
+  - osca-advanced
+  - seurat
+  - scran
+  - scuttle
+  - sctransform
+  - harmony
+  - batchelor
+- id: cell_annotation
+  planned_source_ids:
+  - singler
+  - single-cell-best-practices
+  - osca
+  - seurat
+  - celldex
+  - azimuth
+- id: differential_expression
+  planned_source_ids:
+  - mast
+  - osca
+  - seurat
+  - bioconductor-package-vignettes
+  - limma
+  - edger
+  - deseq2
+- id: enrichment_analysis
+  planned_source_ids:
+  - clusterprofiler
+  - bioconductor-package-vignettes
+  - enrichplot
+  - fgsea
+  - msigdbr
+- id: cell_cell_communication
+  planned_source_ids:
+  - liana
+  - cellchat
+  - nichenet
+- id: trajectory_analysis
+  planned_source_ids:
+  - monocle3
+  - osca
+  - osca-advanced
+  - slingshot
+  - tradeseq
+- id: reproducibility_renv
+  planned_source_ids:
+  - renv
+  - github-actions
+- id: pseudobulk_de
+  planned_source_ids:
+  - pseudobulk-de-guidance
+  - limma
+  - edger
+  - deseq2

@@ -1,0 +1,61 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://example.invalid/bio-agent-reference-pack/vendor-snapshot-manifest.schema.json",
+  "title": "vendor-snapshot-manifest.yaml schema",
+  "description": "Manifest for a pinned_vendor_snapshot acquisition. The MANIFEST.yaml file itself MUST NOT appear in included_files[].",
+  "type": "object",
+  "required": [
+    "schema_version",
+    "source_id",
+    "upstream_url",
+    "source_commit",
+    "acquisition_mode",
+    "license",
+    "license_evidence_url",
+    "acquired_date",
+    "forbidden_extensions_filtered",
+    "included_files",
+    "excluded_forbidden_files"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "schema_version": { "const": "0.1" },
+    "source_id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9-]*$" },
+    "upstream_url": { "type": "string" },
+    "source_commit": { "type": "string" },
+    "source_release": { "type": ["string", "null"] },
+    "acquisition_mode": { "const": "pinned_vendor_snapshot" },
+    "license": { "type": "string", "not": { "const": "unknown_pending_review" } },
+    "license_evidence_url": { "type": "string" },
+    "acquired_date": { "type": "string", "format": "date" },
+    "forbidden_extensions_filtered": {
+      "type": "array",
+      "items": { "type": "string" }
+    },
+    "included_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "sha256", "size_bytes"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string", "not": { "const": "MANIFEST.yaml" } },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "size_bytes": { "type": "integer", "minimum": 0 }
+        }
+      }
+    },
+    "excluded_forbidden_files": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["path", "reason"],
+        "additionalProperties": false,
+        "properties": {
+          "path": { "type": "string" },
+          "reason": { "type": "string" }
+        }
+      }
+    }
+  }
+}

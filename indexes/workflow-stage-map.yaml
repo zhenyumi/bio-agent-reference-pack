@@ -1,79 +1,79 @@
-schema_version: "0.1"
-description: "Planned workflow-stage routing only. This file must not summarize analysis guidance."
+schema_version: '0.1'
+description: Planned workflow-stage routing only. This file must not summarize analysis guidance.
 workflow_stages:
-  - id: project_reproducibility
-    planned_source_ids:
-      - renv
-      - github-actions
-      - git-submodule-documentation
-  - id: data_container_selection
-    planned_source_ids:
-      - singlecellexperiment
-      - seurat
-      - spatialexperiment
-      - spatialfeatureexperiment
-  - id: quality_control
-    planned_source_ids:
-      - single-cell-best-practices
-      - osca
-      - scuttle
-      - scater
-  - id: doublet_and_contamination_checks
-    planned_source_ids:
-      - scdblfinder
-      - decontx-celda
-      - soupx
-  - id: analysis_workflow
-    planned_source_ids:
-      - osca
-      - osca-advanced
-      - seurat
-      - bioconductor-package-vignettes
-      - sctransform
-      - batchelor
-      - harmony
-      - celldex
-      - azimuth
-  - id: reporting_and_review
-    planned_source_ids:
-      - codex-agents-guidance
-      - opencode-documentation
-      - gptomics-bioskills
-  - id: differential_expression
-    planned_source_ids:
-      - limma
-      - edger
-      - deseq2
-      - pseudobulk-de-guidance
-      - mast
-  - id: enrichment_and_pathway
-    planned_source_ids:
-      - clusterprofiler
-      - enrichplot
-      - fgsea
-      - msigdbr
-  - id: trajectory_and_lineage
-    planned_source_ids:
-      - monocle3
-      - slingshot
-      - tradeseq
-  - id: spatial_analysis
-    planned_source_ids:
-      - spatialexperiment
-      - spatialfeatureexperiment
-      - seurat-spatial
-      - stutility
-      - banksy
-      - nnsvg
-      - squidpy
-      - giotto
-      - bayesspace
-      - spark-x
-      - visium
-      - xenium
-      - cosmx
-  - id: cell_communication
-    planned_source_ids:
-      - liana
-      - cellchat
-      - nichenet
+- id: project_reproducibility
+  planned_source_ids:
+  - renv
+  - github-actions
+  - git-submodule-documentation
+- id: data_container_selection
+  planned_source_ids:
+  - singlecellexperiment
+  - seurat
+  - spatialexperiment
+  - spatialfeatureexperiment
+- id: quality_control
+  planned_source_ids:
+  - single-cell-best-practices
+  - osca
+  - scuttle
+  - scater
+- id: doublet_and_contamination_checks
+  planned_source_ids:
+  - scdblfinder
+  - decontx-celda
+  - soupx
+- id: analysis_workflow
+  planned_source_ids:
+  - osca
+  - osca-advanced
+  - seurat
+  - bioconductor-package-vignettes
+  - sctransform
+  - batchelor
+  - harmony
+  - celldex
+  - azimuth
+- id: reporting_and_review
+  planned_source_ids:
+  - codex-agents-guidance
+  - opencode-documentation
+  - gptomics-bioskills
+- id: differential_expression
+  planned_source_ids:
+  - limma
+  - edger
+  - deseq2
+  - pseudobulk-de-guidance
+  - mast
+- id: enrichment_and_pathway
+  planned_source_ids:
+  - clusterprofiler
+  - enrichplot
+  - fgsea
+  - msigdbr
+- id: trajectory_and_lineage
+  planned_source_ids:
+  - monocle3
+  - slingshot
+  - tradeseq
+- id: spatial_analysis
+  planned_source_ids:
+  - spatialexperiment
+  - spatialfeatureexperiment
+  - seurat-spatial
+  - stutility
+  - banksy
+  - nnsvg
+  - squidpy
+  - giotto
+  - bayesspace
+  - spark-x
+  - visium
+  - xenium
+  - cosmx
+- id: cell_communication
+  planned_source_ids:
+  - liana
+  - cellchat
+  - nichenet

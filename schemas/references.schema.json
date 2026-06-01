@@ -31,13 +31,25 @@
           "source_type": { "type": "string" },
           "upstream": { "type": ["string", "null"] },
           "license": { "type": ["string", "null"] },
+          "license_evidence_url": { "type": ["string", "null"] },
           "version": { "type": ["string", "null"] },
-          "acquisition_mode": { "enum": ["not_acquired", "link_only", "vendored", "generated_lock", "git_submodule"] },
+          "acquisition_mode": {
+            "enum": [
+              "git_submodule",
+              "pinned_vendor_snapshot",
+              "link_only",
+              "metadata_only",
+              "defer",
+              "do_not_include"
+            ]
+          },
           "local_path": { "type": ["string", "null"] },
+          "reading_priority": {
+            "enum": ["must_read", "optional_read", "project_specific_read"]
+          },
           "notes": { "type": "string" }
         }
       }
     }
   }
 }
-

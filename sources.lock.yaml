@@ -1,64 +1,12 @@
-schema_version: "0.1"
-description: "Source acquisition lock file. Acquired sources are pinned by commit hash."
-sources:
-  - source_id: osca
-    version_or_commit: "fe7b362a3215622e06e987aa021d7eec2d0a1fba"
-    checked_date: "2026-05-29"
-    license: "CC BY 4.0"
-    local_path: sources/upstream/osca
-    acquisition_mode: git_submodule
-  - source_id: osca-advanced
-    version_or_commit: "06225560116192a4679c557c05887593050cc705"
-    checked_date: "2026-05-29"
-    license: "CC BY 4.0"
-    local_path: sources/upstream/osca-advanced
-    acquisition_mode: git_submodule
-  - source_id: seurat
-    version_or_commit: "d464e640cf30da8a45b690b61cdb9462b946b5a9"
-    checked_date: "2026-05-29"
-    license: "MIT + file LICENSE"
-    local_path: sources/upstream/seurat
-    acquisition_mode: git_submodule
-  - source_id: scuttle
-    version_or_commit: "88a483825ee583c0f15f88dab95e36384af8d1c5"
-    checked_date: "2026-05-29"
-    license: "GPL-3"
-    local_path: sources/upstream/scuttle
-    acquisition_mode: git_submodule
-  - source_id: scran
-    version_or_commit: "569d2f89d928451efa912f52f213af2f47c3a695"
-    checked_date: "2026-05-29"
-    license: "GPL-3"
-    local_path: sources/upstream/scran
-    acquisition_mode: git_submodule
-  - source_id: singlecellexperiment
-    version_or_commit: "9972b11175aa389e777ca38da4a31491636bb6fe"
-    checked_date: "2026-05-29"
-    license: "GPL-3"
-    local_path: sources/upstream/singlecellexperiment
-    acquisition_mode: git_submodule
-  - source_id: scdblfinder
-    version_or_commit: "8f8c295ffef5bed9ae8449a8d129ef549ccbac71"
-    checked_date: "2026-05-29"
-    license: "GPL-3 + file LICENSE"
-    local_path: sources/upstream/scdblfinder
-    acquisition_mode: git_submodule
-  - source_id: decontx-celda
-    version_or_commit: "ab63841015b618915dbee4fccbb24822a79ae4e1"
-    checked_date: "2026-05-29"
-    license: "MIT + file LICENSE"
-    local_path: sources/upstream/decontx-celda
-    acquisition_mode: git_submodule
-  - source_id: sctransform
-    version_or_commit: "49e35b5aeb76a602910207cbfde1561093340be3"
-    checked_date: "2026-05-29"
-    license: "GPL-3 | file LICENSE"
-    local_path: sources/upstream/sctransform
-    acquisition_mode: git_submodule
+schema_version: '0.1'
+description: Source acquisition lock file. No local sources are currently acquired.
+  All sources are link-only, metadata-only, or deferred. Agents should read upstream
+  documentation on demand using references.yaml and indexes.
+sources: []
 future_lock_fields:
-  - source_id
-  - version_or_commit
-  - checked_date
-  - license
-  - local_path
-  - acquisition_mode
+- source_id
+- version_or_commit
+- checked_date
+- license
+- local_path
+- acquisition_mode
