@@ -5,7 +5,7 @@ Codex reads this repository as an agent-readable project.
 ## Authority Model
 
 - `PLAN.md` controls current repository development.
-- `sources/upstream/` is authoritative when source files are present.
+- `references.yaml` is the authoritative source registry. Entries are `link_only` or `metadata_only` records with upstream URLs. Agents must not assume local upstream source files exist in `sources/upstream/`; they should read official upstream sources via the URLs recorded in `references.yaml`.
 - `indexes/` files are navigation aids only. They route agents to source IDs and must not summarize or replace original sources.
 - `policies/` govern agent behavior in this repository, but they do not replace original upstream guides.
 - Downstream project `AGENTS.md`, `PLAN.md`, existing scripts, dataset papers, supplementary methods, author code, and previous outputs override this central reference pack for that downstream project.

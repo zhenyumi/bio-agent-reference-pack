@@ -2,7 +2,13 @@
 
 Upstream updates should be checked and reviewed, not silently applied to downstream projects.
 
-Future update checks should:
+## Current Acquisition State
+
+- `git_submodule` is not used in the current state.
+- `pinned_vendor_snapshot` is reserved for future reviewed local acquisition only.
+- No upstream source files should be vendored unless explicitly reviewed.
+
+## Future Update Checks
 
 - Report source ID, current locked version, detected upstream version, checked date, and review status.
 - Avoid changing downstream analysis behavior automatically.

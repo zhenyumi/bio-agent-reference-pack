@@ -1,8 +1,10 @@
 # bio-agent-reference-pack
 
-This repository is a source-first, version-pinned, license-aware reference pack for bioinformatics coding agents.
+This repository is a source-first, link-resolved, license-aware reference registry for bioinformatics coding agents.
 
 It is intended to help agents know which original upstream sources to read before planning, reviewing, or modifying bioinformatics analysis projects. It is not a scientific summary repository, a RAG system, or a database-first knowledge base.
+
+Sources are recorded in `references.yaml` as `link_only` or `metadata_only` entries with official upstream URLs. No package source trees are vendored locally under `sources/upstream/`. Agents should use `references.yaml` and `indexes/` to identify the relevant official upstream sources, then read those upstream sources before planning, reviewing, or modifying downstream bioinformatics analysis code.
 
 Original upstream guides, official package documentation, dataset papers, supplementary methods, and author code are authoritative. The files in `indexes/` only route agents to relevant sources; they must not replace, paraphrase, or reinterpret original scientific guidance.
 
