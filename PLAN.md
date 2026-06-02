@@ -70,7 +70,7 @@ Current validation covers metadata, repository hygiene, and export pipeline:
 - Indexes remain routing maps only; they are not scientific guidance.
 - `policies/agent-reading-protocol.md` directs agents to retrieve upstream documentation on demand rather than relying on vendored local copies.
 
-## 11. Stage 4 – Lightweight Update-Review Scaffolding (Current)
+## 11. Stage 4 – Lightweight Update-Review Scaffolding (Completed)
 
 Update checks are now local, deterministic, and safe by default:
 
@@ -80,12 +80,29 @@ Update checks are now local, deterministic, and safe by default:
 - The `--online` flag is reserved for future reviewed implementation; currently it only prints a stub message and exits.
 - CI runs `check_upstream_updates.py` after metadata validation and hygiene scan, before export generation.
 
-## 12. Next Phase
+## 12. Stage 5 – Online Link Checking and CI Validation (Completed)
 
-After Stage 4 is reviewed and committed, future phases may:
+### Changes
 
+- `scripts/check_links_online.py`: Report-only URL checker for upstream and license_evidence_url fields. Uses urllib (stdlib), HEAD with GET fallback only for 403/405/501. Detects redirects via response.geturl(). Default exit 1 on broken upstream for link_only entries; license_evidence_url failures are warnings only. `--no-fail` always exits 0. `--report` writes `reports/links-check.yaml`.
+- `tests/test_check_links_online.py`: Offline tests using unittest.mock. Covers HEAD success, redirect detection, 404 failure, 405-to-GET fallback, link_only upstream strict failure, metadata_only upstream warning behavior, license_evidence_url warning behavior, report writing, and a no-network --help subprocess smoke test.
+- `.github/workflows/validate.yml`: Added `export_opencode_skill.py` step after verify_export_bundle and before unittest discovery.
+- `.github/workflows/check-upstream-links.yml`: Monthly + manual workflow for link checking with --no-fail --report and artifact upload.
+- `scripts/check_upstream_updates.py`: Updated `--online` stub to point users to `check_links_online.py --help`.
+- `PLAN.md`: Stage 5 section added.
+
+### Downstream /ref-bio Trial
+
+- `install-opencode.sh --project /tmp/ref-bio-downstream-trial`: install, dry-run, update, uninstall all pass
+- Required installed files verified: SKILL.md, reference-pack/AGENTS.reference.md, reference-pack/references.link-only.yaml, reference-pack/indexes/, reference-pack/policies/, reference-pack/MANIFEST.yaml
+- Forbidden directories verified absent: sources/, acquisition/, exports/, reports/, .git/, node_modules/
+
+## 13. Next Phase
+
+After Stage 5 is reviewed and committed, future phases may:
+
+- Implement reviewed online update checks under the `--online` flag in check_upstream_updates.py (requires Codex/review approval).
 - Build downstream project reference bundles using the link-only catalog and the existing export pipeline.
-- Implement reviewed online update checks under the `--online` flag (requires Codex/review approval before any network code is added).
 - Re-acquire sources under a strict snapshot policy if a future project requires local acquisition, reusing the existing `pinned_vendor_snapshot` schema and manifest format.
 
 ## Stage 2 Acceptance Criteria

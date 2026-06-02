@@ -300,8 +300,9 @@ def main():
 
     if args.online:
         print(
-            "Online upstream checks are intentionally not implemented "
-            "in this lightweight stage."
+            "Online upstream checks are not implemented in this script.\n"
+            "Use the dedicated online link checker instead:\n"
+            "  python3 scripts/check_links_online.py --help"
         )
         return 0
 
