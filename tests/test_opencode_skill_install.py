@@ -6,9 +6,21 @@ import tempfile
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "install_opencode_skill.py"
+
+
+def read_frontmatter(path):
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---\n"):
+        return None
+    parts = text.split("---\n", 2)
+    if len(parts) < 3:
+        return None
+    return yaml.safe_load(parts[1])
 
 
 class TestOpenCodeSkillInstall(unittest.TestCase):
@@ -46,6 +58,11 @@ class TestOpenCodeSkillInstall(unittest.TestCase):
             dest = target / ".opencode" / "skills" / "ref-bio"
             self.assertTrue((dest / "SKILL.md").is_file())
             self.assertTrue((dest / "reference-pack" / "references.link-only.yaml").is_file())
+            frontmatter = read_frontmatter(dest / "SKILL.md")
+            self.assertIsNotNone(frontmatter, "Installed SKILL.md must start with frontmatter")
+            self.assertEqual(frontmatter.get("name"), "ref-bio")
+            self.assertIsInstance(frontmatter.get("description"), str)
+            self.assertGreater(len(frontmatter["description"]), 0)
             self.assertIn("/ref-bio", result.stdout)
 
     def test_install_refuses_overwrite_without_force(self):

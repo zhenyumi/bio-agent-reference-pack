@@ -5,10 +5,22 @@ import sys
 import unittest
 from pathlib import Path
 
+import yaml
+
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 SCRIPT = REPO_ROOT / "scripts" / "export_opencode_skill.py"
 EXPORT_DIR = REPO_ROOT / "exports" / "opencode-skill" / "ref-bio"
+
+
+def read_frontmatter(path):
+    text = path.read_text(encoding="utf-8")
+    if not text.startswith("---\n"):
+        return None
+    parts = text.split("---\n", 2)
+    if len(parts) < 3:
+        return None
+    return yaml.safe_load(parts[1])
 
 
 class TestOpenCodeSkillExport(unittest.TestCase):
@@ -36,6 +48,14 @@ class TestOpenCodeSkillExport(unittest.TestCase):
         skill_path = EXPORT_DIR / "SKILL.md"
         self.assertTrue(skill_path.is_file(), "Exported SKILL.md missing")
         self.assertIn("/ref-bio", skill_path.read_text(encoding="utf-8"))
+
+    def test_exported_skill_has_opencode_frontmatter(self):
+        skill_path = EXPORT_DIR / "SKILL.md"
+        frontmatter = read_frontmatter(skill_path)
+        self.assertIsNotNone(frontmatter, "SKILL.md must start with YAML frontmatter")
+        self.assertEqual(frontmatter.get("name"), "ref-bio")
+        self.assertIsInstance(frontmatter.get("description"), str)
+        self.assertGreater(len(frontmatter["description"]), 0)
 
     def test_export_contains_reference_pack(self):
         reference_pack = EXPORT_DIR / "reference-pack"

@@ -1,3 +1,9 @@
+---
+name: ref-bio
+description: Use only when the user message begins with /ref-bio; route bioinformatics planning, review, or implementation tasks to official upstream sources without summarizing or vendoring them.
+compatibility: opencode
+---
+
 # ref-bio
 
 ## Trigger
